@@ -8,14 +8,16 @@ body {
 }
 
 header{
-    color: white;
+    color: rgb(255, 255, 255);
     margin: auto auto;
     font-style: italic;
+    font-size: 3vw;
+    font-weight: bold;
     text-align: center center;
     background-image: url(img/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40vh;
+    height: 55vh;
     width: 100%;
     padding: 0.2em;
     margin-top: 0px;
@@ -36,9 +38,10 @@ div{
     color: white;
     margin: auto auto;
     text-align: center center;
-    height: 15vh;
-    width: 30vh;
-    font-size: medium;
+    height: 12vh;
+    width: 45vh;
+    font-size: 1.5vw;
+    font-weight: bold;
 }
 
 #btn2 {
