@@ -26,6 +26,11 @@ div{
     text-align: center;
     padding: 0;
 }
+p {
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
 
 #btn2-3{
     padding: 5em;
@@ -48,14 +53,13 @@ div{
     color: #FFF;
     text-align: center;
     font-family: Helvetica, sans-serif;
-    font-size: 1em;
-    font-style: normal;
+    font-size: 1vw;
+    font-weight: bold;
     font-weight: 400;
     line-height: normal;
     padding: 2em;
     color: white;
     border-radius: 20%;
-    border: 1em solid #000;
     background: #7A0BC0;
 }
 
