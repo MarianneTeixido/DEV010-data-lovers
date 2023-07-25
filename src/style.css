@@ -1,12 +1,23 @@
 body {
     background-color: black;
-    background-image: url(img/fondo1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
+
+    #index{
+        background-image: url(img/fondo1.jpg);
+    }
+
+    #about{
+        background-image: url(img/fondo1.jpg);
+    }
+
+    #baraja {
+        background-image: url(img/fondo2.jpg)
+    }
 }
 
 header{
