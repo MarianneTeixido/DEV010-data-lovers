@@ -1,12 +1,19 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+//import { example } from './data.js';
+import data from './data/tarot/tarot.js';
 
 //Método para navegar entre archivos HTML con JS.
-document.getElementsByName("deck")[0].addEventListener("click", function(e){
-e.preventDefault;
+document.getElementById("btn3").addEventListener("click", function(nav){
+nav.preventDefault;
 window.location.href='/baraja.html?deck';
 });
 
-//console.log(example, data);
+document.getElementById("image");
+const loadImg = new Image;
+loadImg.onload = function showImage (){
+    loadImg.src = this.src;
+};
+
+loadImg.src = data.cards[0].img;
+
+//console.log(data.cards[0].img);
+
