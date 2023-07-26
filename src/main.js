@@ -54,5 +54,5 @@ for (let i=0; i < data.cards.length; i++) {
   document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + data.cards[i].value
   document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + data.cards[i].meaning_up
   document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
-  document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + data.cards[i].desc
+  //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + data.cards[i].desc
 }
