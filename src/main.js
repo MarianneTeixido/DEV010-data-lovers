@@ -7,18 +7,9 @@ document.getElementById("btn2").addEventListener("click", function(nav){
   window.location.href='/baraja.html?reading';
 });
 
-document.getElementById("image");
-const loadImg = new Image;
-loadImg.onload = function showImage (){
-  loadImg.src = this.src;
-};
 
-loadImg.src = data.cards[0].img;
-
-//console.log(data.cards[0].img);
 
 //bucle querySelector para la imagen al frente de las cards
-
 //bucle querySelector para el texto al reverso de las cards
 
 let cardsHTML = '';
@@ -26,7 +17,7 @@ data.cards.map(() => {
   cardsHTML += '<div class="flip-card">\
   <div class="flip-card-inner">\
     <div class="flip-card-front">\
-      <img id="imagen" src="~$imageUrl" onload="javascript:showImage()"></img>\
+      <img data-testid="img" ></img>\
     </div>\
     <div class="flip-card-back">\
       <ul>\
@@ -46,8 +37,8 @@ data.cards.map(() => {
 })
 
 document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
-
 for (let i=0; i < data.cards.length; i++) {
+  document.querySelectorAll('[data-testid = "img"]')[i].src = data.cards[i].img
   document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + data.cards[i].type
   document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + data.cards[i].name_short
   document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + data.cards[i].name
