@@ -7,13 +7,12 @@
   </head>
   <body id="baraja">
     <main>
-        <div>
+        <div id="deck-header">
             <header>
-                <h1>Baraja</h1>
+                <h1>Deck</h1>
             </header>
         </div>
-        <div>
-          <img id="imagen" src="~$imageUrl" onload="javascript:showImage()"></img>
+        <div data-testid="cards-container">
         </div>
         <div>
             <form action="index.html">
@@ -22,5 +21,9 @@
         </div>    
     </main>    
     <script src="main.js" type="module"></script>
+    <footer>
+      <p>Powered by &hearts;</p>
+      <p>Grecia Fragoso & Marianne Teixido, Laboratoria &copy;</p>
+    </footer>
   </body>
 </html>
