@@ -47,31 +47,23 @@ for (let i=0; i < data.cards.length; i++) {
   document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
   //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + data.cards[i].desc
 }
-
-/*const option1 = document.createElement('option1');
-const valor1 = 'none-none'
-option1.value = valor1;
-option1.appendChild(option1)
-
-const option2 = document.createElement('option2');
-const valor2 = 'minor-arcans'
-option2.value = valor2;
-option2.text =  'Minor arcans'
-$select.appendChild(option2)
-
-const option3 = document.createElement('option3');
-const valor3 = 'major-arcans'
-option3.value = valor3;
-option3.text =  'Major arcans'
-$select.appendChild(option3)*/
-
 const $select = document.querySelector("#arcans-filter")
 
 $select.addEventListener("change", filtrar)
 
 function filtrar() {
+  //const stringKeys = Object.keys(data.cards);
   const selectedOption = $select.selectedIndex;
+  for (let i = 0; i < data.cards.length; i++) {
+    data.cards[i] = Object.values(data.cards[i])
+    console.log(data.cards[i]); //hasta aquí, imprime todos los values del object cards
+    /*const minorArcans = data.cards.filter(arcans => arcans === "minor")
+    console.log(minorArcans); esto quién sabe qué imprime :( */
+  }
   if (selectedOption === 1) {
+    console.log(selectedOption)
+  }
+  if (selectedOption === 2 ) {
     console.log(selectedOption)
   }
 } 
