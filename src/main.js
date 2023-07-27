@@ -47,40 +47,56 @@ for (let i=0; i < data.cards.length; i++) {
   document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
   //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + data.cards[i].desc
 }
-const $select = document.querySelector("#arcans-filter")
 
-$select.addEventListener("change", filtrar)
 
-function filtrar() {
-  //const stringKeys = Object.keys(data.cards);
-  const selectedOption = $select.selectedIndex;
-  for (let i = 0; i < data.cards.length; i++) {
-    data.cards[i] = Object.values(data.cards[i])
-    console.log(data.cards[i]); //hasta aquí, imprime todos los values del object cards
-    /*const minorArcans = data.cards.filter(arcans => arcans === "minor")
-    console.log(minorArcans); esto quién sabe qué imprime :( */
-  }
-  if (selectedOption === 1) {
-    console.log(selectedOption)
-  }
-  if (selectedOption === 2 ) {
-    console.log(selectedOption)
-  }
-} 
+//Sort
+const sortName = document.getElementById("sort");
 
-//$select.addEventListener('click', function(select) {
-/*document.querySelector("#arcans-filter").addEventListener('click', function(select) {
-  select.preventDefault;
-  if (Option.value === "minor-arcans") {
-    for (let i = 0; i < data.cards.length; i++ ) {
-      console.log(data.cards.value[i])
+sortName.onchange = function () {
+  console.log(data.cards)
+if(sortName.checked){
+
+const sorted = data.cards.sort(function (a, b) {
+    if (a.name > b.name) {
+      return 1;
     }
-  }
-})*/
+    if (a.name < b.name) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  for (let i=0; i < data.cards.length; i++) {
+    document.querySelectorAll('[data-testid = "img"]')[i].src = sorted[i].img
 
-/*const arcanFilter = () => {
-  for (let i = 0; i < data.cards.length; i++ ) {
-    console.log(data.cards.value[i])
+    } 
+   console.log(data.cards);
   }
-  return 'example';
-};*/
+  
+  if(!sortName.checked){
+ 
+    const reversed = data.cards.reverse(function (a, b) {
+      if (a.value > b.value) {
+        return 1;
+      }
+      if (a.value < b.value) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+    for (let i=0; i < data.cards.length; i++) {
+      document.querySelectorAll('[data-testid = "img"]')[i].src = reversed[i].img
+  
+      } 
+
+
+
+  }
+
+}
+
+
+
+
+
