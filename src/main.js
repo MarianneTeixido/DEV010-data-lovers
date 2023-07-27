@@ -44,6 +44,8 @@ for (let i=0; i < data.cards.length; i++) {
   //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + data.cards[i].desc
 }
 
+
+//Filtro
 const $select = document.querySelector("#arcans-filter") //querySelector para el <select> (lista desplegable)
 
 $select.addEventListener("change", filtrar) //Event listener para ejecutar el filtro cuando se cambia la opción del select
@@ -169,3 +171,45 @@ function filtrar() {
     }
   }
 } 
+
+
+//Sort
+const sortName = document.getElementById("sort");
+sortName.onchange = function () {
+  console.log(data.cards)
+if(sortName.checked){
+const sorted = data.cards.sort(function (a, b) {
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+  for (let i=0; i < data.cards.length; i++) {
+    document.querySelectorAll('[data-testid = "img"]')[i].src = sorted[i].img
+
+    } 
+   console.log(data.cards);
+  }
+  
+  if(!sortName.checked){
+ 
+    const reversed = data.cards.reverse(function (a, b) {
+      if (a.value > b.value) {
+        return 1;
+      }
+      if (a.value < b.value) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+    for (let i=0; i < data.cards.length; i++) {
+      document.querySelectorAll('[data-testid = "img"]')[i].src = reversed[i].img
+  
+      } 
+  }
+}
