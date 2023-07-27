@@ -23,7 +23,7 @@ data.cards.map(() => {
         <li data-testid="value">Value: </li>\
         <li data-testid="meaning-up">Meaning up: </li>\
         <li data-testid="meaning-rev">Meaning rev: </li>\
-        <li data-testid="description">Description: </li>\
+        <li data-testid="description"></li>\
       </ul>\
     </figure>\
   </figure>\
@@ -67,7 +67,7 @@ function filtrar() {
             <li data-testid="value">Value: </li>\
             <li data-testid="meaning-up">Meaning up: </li>\
             <li data-testid="meaning-rev">Meaning rev: </li>\
-            <li data-testid="description">Description: </li>\
+            <li data-testid="description"></li>\
           </ul>\
         </figure>\
       </figure>\
@@ -106,7 +106,7 @@ function filtrar() {
             <li data-testid="value">Value: </li>\
             <li data-testid="meaning-up">Meaning up: </li>\
             <li data-testid="meaning-rev">Meaning rev: </li>\
-            <li data-testid="description">Description: </li>\
+            <li data-testid="description"></li>\
           </ul>\
         </figure>\
       </figure>\
@@ -147,7 +147,7 @@ function filtrar() {
             <li data-testid="value">Value: </li>\
             <li data-testid="meaning-up">Meaning up: </li>\
             <li data-testid="meaning-rev">Meaning rev: </li>\
-            <li data-testid="description">Description: </li>\
+            <li data-testid="description"></li>\
           </ul>\
         </figure>\
       </figure>\
