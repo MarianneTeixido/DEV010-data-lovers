@@ -7,6 +7,7 @@ document.getElementById("btn2").addEventListener("click", function(nav){
   window.location.href='/baraja.html?reading';
 });
 
+//generación de cards sin filtro 
 let cardsHTML = '';
 data.cards.map(() => {
   cardsHTML += '<figure class="flip-card">\
@@ -43,17 +44,14 @@ for (let i=0; i < data.cards.length; i++) {
   //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + data.cards[i].desc
 }
 
-//bucle querySelector para la imagen al frente de las cards
-//bucle querySelector para el texto al reverso de las cards
+const $select = document.querySelector("#arcans-filter") //querySelector para el <select> (lista desplegable)
 
-const $select = document.querySelector("#arcans-filter")
-
-$select.addEventListener("change", filtrar)
+$select.addEventListener("change", filtrar) //Event listener para ejecutar el filtro cuando se cambia la opción del select
 
 function filtrar() {
-  //const stringKeys = Object.keys(data.cards);
+  //bucles para filtrar
   const selectedOption = $select.selectedIndex;
-  if (selectedOption === 0){
+  if (selectedOption === 0){ //bucle para la opción none, genera todas las cards
     let cardsHTML = '';
     data.cards.map(() => {
       cardsHTML += '<figure class="flip-card">\
@@ -91,7 +89,7 @@ function filtrar() {
     }
   }
   if (selectedOption === 1) {
-    const minorArcans = data.cards.filter(obj => obj.type === "minor");
+    const minorArcans = data.cards.filter(obj => obj.type === "minor"); //bucle para opción 1, genera sólo las cards de arcanos menores
     const total = minorArcans.length
     let cardsHTML = '';
     minorArcans.map(() => {
@@ -129,13 +127,10 @@ function filtrar() {
       //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + minorArcans[i].desc
     }
     
-  } /*esto quién sabe qué imprime :( */
-  /*for (let i = 0; i < data.cards.length; i++) {
-    //data.cards[i] = Object.values(data.cards[i])
-    //console.log(data.cards[i]); hasta aquí, imprime todos los values del object cards
-  }*/
+  } 
+
   if (selectedOption === 2 ) {
-    const majorArcans = data.cards.filter(obj => obj.type === "major");
+    const majorArcans = data.cards.filter(obj => obj.type === "major"); //bucle para opción 2, genera cards sólo de arcanos mayores
     const total = majorArcans.length
     let cardsHTML = '';
     majorArcans.map(() => {
@@ -174,20 +169,3 @@ function filtrar() {
     }
   }
 } 
-
-//$select.addEventListener('click', function(select) {
-/*document.querySelector("#arcans-filter").addEventListener('click', function(select) {
-  select.preventDefault;
-  if (Option.value === "minor-arcans") {
-    for (let i = 0; i < data.cards.length; i++ ) {
-      console.log(data.cards.value[i])
-    }
-  }
-})*/
-
-/*const arcanFilter = () => {
-  for (let i = 0; i < data.cards.length; i++ ) {
-    console.log(data.cards.value[i])
-  }
-  return 'example';
-};*/
