@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,11 +14,23 @@
                 <h1>Deck</h1>
             </header>
         </div>
+      <nav class="nav">
+        <div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <p>A Z ↓</p>
+        </div>
         <select id = "arcans-filter" >
           <option value = "none-none">None</option>
           <option value = "minor-arcans">Minor arcans</option>
           <option value = "major-arcans">Major arcans</option>
         </select>
+      </nav>
+
+
+
         <div data-testid="cards-container">
         </div>
         <div>
