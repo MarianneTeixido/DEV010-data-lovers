@@ -7,28 +7,19 @@ document.getElementById("btn2").addEventListener("click", function(nav){
   window.location.href='/baraja.html?reading';
 });
 
-document.getElementById("image");
-const loadImg = new Image;
-loadImg.onload = function showImage (){
-  loadImg.src = this.src;
-};
 
-loadImg.src = data.cards[0].img;
-
-//console.log(data.cards[0].img);
 
 //bucle querySelector para la imagen al frente de las cards
-
 //bucle querySelector para el texto al reverso de las cards
 
 let cardsHTML = '';
 data.cards.map(() => {
-  cardsHTML += '<div class="flip-card">\
-  <div class="flip-card-inner">\
-    <div class="flip-card-front">\
-      <img id="imagen" src="~$imageUrl" onload="javascript:showImage()"></img>\
-    </div>\
-    <div class="flip-card-back">\
+  cardsHTML += '<figure class="flip-card">\
+  <figure class="flip-card-inner">\
+    <figure class="flip-card-front">\
+      <img data-testid="img" width="100%;" height="100%" ></img>\
+    </figure>\
+    <figure class="flip-card-back">\
       <ul>\
         <li data-testid="type">Type: </li>\
         <li data-testid="short-name">Short name: </li>\
@@ -38,16 +29,16 @@ data.cards.map(() => {
         <li data-testid="meaning-rev">Meaning rev: </li>\
         <li data-testid="description">Description: </li>\
       </ul>\
-    </div>\
-  </div>\
-</div>\
+    </figure>\
+  </figure>\
+</figure>\
 <br>\
 '
 })
 
 document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
-
 for (let i=0; i < data.cards.length; i++) {
+  document.querySelectorAll('[data-testid = "img"]')[i].src = data.cards[i].img
   document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + data.cards[i].type
   document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + data.cards[i].name_short
   document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + data.cards[i].name

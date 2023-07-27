@@ -113,7 +113,7 @@ p {
     cursor: pointer;
 }
 
-/*.center {
+.center {
     background-color: rgba(0, 0, 0, 01.5);
     margin: auto;
     width: 70%;
@@ -128,7 +128,7 @@ p {
     font-weight: bold;
     font-weight: 400;
 
-}*/
+}
 
 footer {
     color: rgb(255, 255, 255);
@@ -140,7 +140,7 @@ footer {
     height: 10vh;
     width: 100%;
     max-width: 100%;
-    padding: 0.2em 0;
+    padding: 0.2em 0.5em;
     bottom: 0;
 }
 
@@ -153,7 +153,6 @@ ul {
     background-color: transparent;
     width: 80vh;
     height: 100vh;
-    border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
   
@@ -189,7 +188,10 @@ ul {
   
   /* Style the back side */
   .flip-card-back {
-    background-color: dodgerblue;
+    background-color: #7A0BC0;
     color: white;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 1vw;
     transform: rotateY(180deg);
   }
