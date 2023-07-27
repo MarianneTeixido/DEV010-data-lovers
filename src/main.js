@@ -47,3 +47,48 @@ for (let i=0; i < data.cards.length; i++) {
   document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
   //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + data.cards[i].desc
 }
+
+/*const option1 = document.createElement('option1');
+const valor1 = 'none-none'
+option1.value = valor1;
+option1.appendChild(option1)
+
+const option2 = document.createElement('option2');
+const valor2 = 'minor-arcans'
+option2.value = valor2;
+option2.text =  'Minor arcans'
+$select.appendChild(option2)
+
+const option3 = document.createElement('option3');
+const valor3 = 'major-arcans'
+option3.value = valor3;
+option3.text =  'Major arcans'
+$select.appendChild(option3)*/
+
+const $select = document.querySelector("#arcans-filter")
+
+$select.addEventListener("change", filtrar)
+
+function filtrar() {
+  const selectedOption = $select.selectedIndex;
+  if (selectedOption === 1) {
+    console.log(selectedOption)
+  }
+} 
+
+//$select.addEventListener('click', function(select) {
+/*document.querySelector("#arcans-filter").addEventListener('click', function(select) {
+  select.preventDefault;
+  if (Option.value === "minor-arcans") {
+    for (let i = 0; i < data.cards.length; i++ ) {
+      console.log(data.cards.value[i])
+    }
+  }
+})*/
+
+/*const arcanFilter = () => {
+  for (let i = 0; i < data.cards.length; i++ ) {
+    console.log(data.cards.value[i])
+  }
+  return 'example';
+};*/
