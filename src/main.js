@@ -187,11 +187,11 @@ const sortName = document.getElementById("sort-cards");
 sortName.onchange = function () {
   console.log(data.cards)
   if(sortName.checked){
-    const sorted = data.cards.sort(function (a, b) {
-    if (a.name > b.name) {
+    const sorted = data.cards.sort(function (images, dat) {
+    if (images.name > dat.name) {
       return 1;
     }
-    if (a.name < b.name) {
+    if (images.name < dat.name) {
       return -1;
     }
     // a must be equal to b
@@ -199,7 +199,6 @@ sortName.onchange = function () {
   });
   for (let i=0; i < data.cards.length; i++) {
     document.querySelectorAll('[data-testid = "img"]')[i].src = sorted[i].img
-    document.querySelectorAll('[data-testid = "img"]')[i].src = data.cards[i].img
     document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + data.cards[i].type
     document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + data.cards[i].name_short
     document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + data.cards[i].name
@@ -213,11 +212,11 @@ sortName.onchange = function () {
   }
   if(!sortName.checked){
 
-    const reversed = data.cards.reverse(function (a, b) {
-      if (a.value > b.value) {
+    const reversed = data.cards.reverse(function (images, dat) {
+      if (images.value > dat.value) {
         return 1;
       }
-      if (a.value < b.value) {
+      if (images.value < dat.value) {
         return -1;
       }
       // a must be equal to b
