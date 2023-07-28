@@ -81,7 +81,11 @@ p {
 
 #btn2-3{/*el div que abarca los dos botones del body*/
     padding: 3em;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
 #btn1 {
     border-radius: 100px;
@@ -111,6 +115,11 @@ p {
     border: 1em solid #000;
     background: #7A0BC0;
     cursor: pointer;
+    width: 60vw;
+}
+
+#btn3 {
+  box-shadow: 0 0 50px 15px #7A0BC0;
 }
 
 .center {
@@ -161,7 +170,7 @@ ul {
 .flip-card {
     /*flex: 10;*/
     background-color: transparent;
-    width: 40vh;
+    width: 50vh;
     height: 50vh;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
@@ -184,7 +193,7 @@ ul {
   /* Position the front and back side */
   .flip-card-front, .flip-card-back {
     position: absolute;
-    width: 100%;
+    width: 90%;
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
@@ -202,8 +211,9 @@ ul {
     color: white;
     text-align: center;
     font-family: Helvetica, sans-serif;
-    font-size: 1em;
+    font-size: 0.8em;
     transform: rotateY(180deg);
+    padding-right: 5vw; /*Para centrar el texto del reverso de la card (estaba recargado a la derecha)*/
   }
 
   /*----Start config toggle button----*/
