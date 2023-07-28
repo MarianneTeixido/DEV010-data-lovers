@@ -24,10 +24,11 @@ body {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
-#about{
+/*
+#future{
     background-image: url(img/fondo1.jpg);
     }
+*/
 
 #baraja {
     background-image: url(img/fondo2.jpg)
@@ -71,6 +72,8 @@ section{
     text-align: center;
     display: block;
 }
+
+
 
 p {
     color: white;
@@ -122,8 +125,14 @@ p {
   box-shadow: 0 0 50px 15px #7A0BC0;
 }
 
+#hands{
+  border-radius: 20%;
+  padding: 2em;
+}
+
 .center {
     background-color: rgba(0, 0, 0, 01.5);
+    padding: 3em;
     margin: auto;
     width: 70%;
     display: flex;
@@ -160,6 +169,17 @@ h1 {
 
 ul {
     list-style-type: none;
+}
+
+#textRead {
+  font-family: "Courier New";
+  font-size: 100%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
 }
 
 .cards-container {
