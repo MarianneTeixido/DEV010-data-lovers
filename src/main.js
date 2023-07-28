@@ -186,22 +186,22 @@ function ordenar(){
 const sortName = document.getElementById("sort-cards");
 sortName.onchange = function () {
   console.log(data.cards)
-if(sortName.checked){
-const sorted = data.cards.sort(function (a, b) {
-    if (a.name > b.name) {
-      return 1;
-    }
-    if (a.name < b.name) {
-      return -1;
-    }
-    // a must be equal to b
-    return 0;
-  });
-  for (let i=0; i < data.cards.length; i++) {
-    document.querySelectorAll('[data-testid = "img"]')[i].src = sorted[i].img
+  if(sortName.checked){
+    const sorted = data.cards.sort(function (a, b) {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+    for (let i=0; i < data.cards.length; i++) {
+      document.querySelectorAll('[data-testid = "img"]')[i].src = sorted[i].img
 
     } 
-   console.log(data.cards);
+    console.log(data.cards);
   }
   if(!sortName.checked){
 
@@ -217,7 +217,6 @@ const sorted = data.cards.sort(function (a, b) {
     });
     for (let i=0; i < data.cards.length; i++) {
       document.querySelectorAll('[data-testid = "img"]')[i].src = reversed[i].img
-  
-      } 
+    } 
   }
 }
