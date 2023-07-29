@@ -23,21 +23,59 @@ body {
     padding: 0 0;
     margin-bottom: 0;
     padding-bottom: 0;
+    cursor: url(img/cursor1.png) url(img/cursor2.png);
 }
 
 #about{
     background-image: url(img/fondo1.jpg);
+    cursor: url(img/cursor1.png) url(img/cursor2.png);
     }
 
+/*inicio estilo overlay*/
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 80vw;
+  height: 100vh;/*Estos sirven para centrar el recuadro*/
+  left: 10vw;
+  right: 10vw;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 2;
+  cursor: pointer;
+  overflow: scroll;
+}
+
+#text img {
+  width: 15vw;
+}
+
+#text{
+  position: absolute;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  top: 55%;
+  left: 50%;
+  font-size: 2vh;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+/*Fin estilo overlay*/
 #baraja {
-    background-image: url(img/fondo2.jpg)
+    background-image: url(img/fondo2.jpg);
+    cursor: url(img/cursor1.png) url(img/cursor2.png);
 }
 
 #index-header {
     color: rgb(255, 255, 255);
     margin: 0;
     font-style: italic;
-    font-size: 3vw;
+    font-size: 4vw;
     font-weight: bold;
     background-image: url(img/header.jpg);
     background-repeat: no-repeat;
@@ -45,17 +83,31 @@ body {
     height: 40vh;
     width: 100%;
     max-width: 100%;
-    padding: 0.2em 0;
     margin-top: 0;
     left: 0;
     top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+  text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
+}
+
+#index-header button {
+  font-size: 4vw;
 }
 
 #deck-header, #about-header {
     color: rgb(255, 255, 255);
     margin: 0;
     font-style: italic;
-    font-size: 3vw;
+    font-size: 6vw;
     font-weight: bold;
     background: none;
     height: 25vh;
@@ -96,7 +148,7 @@ p {
     text-align: center center;
     height: 7vh;
     width: 40vw;
-    font-size: 1em;
+    font-size: 4em;
     font-weight: bold;
     cursor: pointer;
 }
@@ -105,7 +157,7 @@ p {
     color: #FFF;
     text-align: center;
     font-family: Helvetica, sans-serif;
-    font-size: 1em;
+    font-size: 2vw;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -165,48 +217,97 @@ ul {
 .cards-container {
   display: flex;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 30vw;
+  height: 30vh;
+  perspective: 1000px;
+  font-size: 0.7em;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #7A0BC0;
+  color: white;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 0.7em;
+  padding-right: 4vw;
+  transform: rotateY(180deg);
 }
 /*flip cards*/
-.flip-card {
-    /*flex: 10;*/
-    background-color: transparent;
-    width: 50vh;
-    height: 50vh;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
+/*.flip-card { está comentado porque daba diferencia en el giro de las cards
+    background-color: white; /*Regresar a transparent*/
+    /*width: 30vh;
+    height: 30vh;
+    perspective: 1000vh;/*Remove this if you don't want the 3D effect */
+  /*}
   
   /* This container is needed to position the front and back side */
-  .flip-card-inner {
+  /*.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
+  /*.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
   
   /* Position the front and back side */
-  .flip-card-front, .flip-card-back {
+  /*.flip-card-front, .flip-card-back {
     position: absolute;
     width: 90%;
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
+    /*backface-visibility: hidden;
   }
   
   /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
+  /*.flip-card-front {
     background-color: #bbb;
     color: black;
   }
   
   /* Style the back side */
-  .flip-card-back {
+  /*.flip-card-back {
     background-color: #7A0BC0;
     color: white;
     text-align: center;
@@ -214,7 +315,7 @@ ul {
     font-size: 0.8em;
     transform: rotateY(180deg);
     padding-right: 5vw; /*Para centrar el texto del reverso de la card (estaba recargado a la derecha)*/
-  }
+  /*}
 
   /*----Start config toggle button----*/
 

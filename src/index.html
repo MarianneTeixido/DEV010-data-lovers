@@ -7,17 +7,47 @@
   </head>
   <body id="index">
     <main>
-    <div id="root"></div>
-    <section id="index-header">
+    <!-- <div id="root"></div> -->
+    <!-- <section id="index-header">
       <header class="index-header">
         <h1>Tarot</h1>
         <form action="about.html">
         <button id="btn1" name="info">Learn about</button>
         </form>
       </header>
+    </section> -->
+    <script>
+      function on() {
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      function off() {
+        document.getElementById("overlay").style.display = "none";
+      }
+    </script>
+    <section id="index-header">
+      <header class="index-header">
+        <h1>Tarot</h1>
+        <div id="overlay" onclick="off()">
+          <div id="text"><br><img src="img/overlay1.png"/><br>Tarot is a system of divination and spiritual guidance that has fascinated people of diverse cultures for centuries. 
+            cultures for centuries. This practice is based on the use of special cards known as tarot cards, which are loaded with symbolism and meaning. 
+            tarot cards, which are loaded with symbolism and meaning.<br>
+            Each tarot deck is composed of 78 cards, divided into two main groups: Major Arcana and the Minor Arcana.<br> 
+            The Major Arcana represent powerful and meaningful archetypes that reflect fundamental situations in human life. 
+            fundamental situations of human life.<br> 
+            The Minor Arcana, on the other hand, detail more everyday aspects and represent 
+            and represent situations and people in the querent's environment.<br><br>
+            Tarot is used as a tool for self-knowledge, reflection and prediction.<br><br>
+            &#9733;  Are you ready for magic? &#9733;
+          </div>
+          </div>
+        <div style="padding: 20px">
+          <button id="btn1" onclick="on()">Learn about</button>
+        </div>
+      </header>
     </section>
     <section id="btn2-3">
-      <button id="btn2" name="deck">Tarot Deck</button>
+      <button id="btn2" name="deck">Tarot deck</button>
       <br>
       <button id="btn3" name="reading">Open reading</button>
     </section>
