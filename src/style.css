@@ -156,7 +156,7 @@ p {
     cursor: pointer;
 }
 
-#btn2, #btn3 {
+#btn2, #btn3, #btn4{
     color: #FFF;
     text-align: center;
     font-family: Helvetica, sans-serif;
@@ -173,7 +173,7 @@ p {
     width: 60vw;
 }
 
-#btn3 {
+#btn4 {
   box-shadow: 0 0 50px 15px #7A0BC0;
 }
 

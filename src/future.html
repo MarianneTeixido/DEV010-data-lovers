@@ -15,8 +15,22 @@
         <section>
             <img src="img/read.jpg" alt="read-image" id="hands" width="800" height="600">
         </section> 
+        <script>
+          function on() {
+            document.getElementById("overlay").style.display = "block";
+          }
+    
+          function off() {
+            document.getElementById("overlay").style.display = "none";
+          }
+        </script>
         <section>
-        <button id="btn3">Instructions</button>
+          <div id="overlay" onclick="off()">
+            <div id="text">Instructions</div>
+            </div>
+          <div style="padding: 20px">
+            <button id="btn3" onclick="on()">Instructions</button>
+          </div>
         </section>
         <article>
             <div class="center">
@@ -72,7 +86,7 @@
 
         </article>
         <section>
-            <button id="btn3">Read my luck</button>
+            <button id="btn4">Read my luck</button>
             <div>
                 <form action="index.html">
                 <button id="btn2">Home</button>
