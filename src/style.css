@@ -99,7 +99,7 @@ body {
 h1 {
   text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
     0px 0px 20px #b393d3;
-    margin: 0; /*Eliminé margen para evitar que quedé muy alejado  de los demás elementos (botón index)*/
+  margin: 0; /*Eliminé margen para evitar que quedé muy alejado  de los demás elementos (botón index)*/
 }
 
 #index-header button {
@@ -172,10 +172,13 @@ p {
     padding: 2em;
     color: white;
     border-radius: 100px;
-    border: 1em solid #000;
+    border: 0.5em solid #000;
     background: #7A0BC0;
     cursor: pointer;
     width: 60vw;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
+    box-shadow: #7A0BC0 0px 22px 70px 4px;
 }
 
 #btn4 {
@@ -218,7 +221,7 @@ footer {
     bottom: 0;
     text-align: center;
     justify-content: center;
-    position: absolute;
+    position: absolute; /*El footer ya no flota*/
     /*position: fixed;*/
 }
 
