@@ -56,12 +56,12 @@ function filtrar() {
   if (selectedOption === 0){ //bucle para la opción none, genera todas las cards
     let cardsHTML = '';
     data.cards.map(() => {
-      cardsHTML += '<figure class="flip-card">\
-      <figure class="flip-card-inner">\
-        <figure class="flip-card-front">\
+      cardsHTML += '<div class="flip-card">\
+      <div class="flip-card-inner">\
+        <div class="flip-card-front">\
           <img data-testid="img" width="100%;" height="100%" ></img>\
-        </figure>\
-        <figure class="flip-card-back">\
+        </div>\
+        <div class="flip-card-back">\
           <ul>\
             <li data-testid="type">Type: </li>\
             <li data-testid="short-name">Short name: </li>\
@@ -71,9 +71,9 @@ function filtrar() {
             <li data-testid="meaning-rev">Meaning rev: </li>\
             <li data-testid="description"></li>\
           </ul>\
-        </figure>\
-      </figure>\
-    </figure>\
+        </div>\
+      </div>\
+    </div>\
     <br>\
     '
     })
@@ -95,12 +95,12 @@ function filtrar() {
     const total = minorArcans.length
     let cardsHTML = '';
     minorArcans.map(() => {
-      cardsHTML += '<figure class="flip-card">\
-      <figure class="flip-card-inner">\
-        <figure class="flip-card-front">\
+      cardsHTML += '<div class="flip-card">\
+      <div class="flip-card-inner">\
+        <div class="flip-card-front">\
           <img data-testid="img" width="100%;" height="100%" ></img>\
-        </figure>\
-        <figure class="flip-card-back">\
+        </div>\
+        <div class="flip-card-back">\
           <ul>\
             <li data-testid="type">Type: </li>\
             <li data-testid="short-name">Short name: </li>\
@@ -110,9 +110,9 @@ function filtrar() {
             <li data-testid="meaning-rev">Meaning rev: </li>\
             <li data-testid="description"></li>\
           </ul>\
-        </figure>\
-      </figure>\
-    </figure>\
+        </div>\
+      </div>\
+    </div>\
     <br>\
     '
     })
@@ -136,12 +136,12 @@ function filtrar() {
     const total = majorArcans.length
     let cardsHTML = '';
     majorArcans.map(() => {
-      cardsHTML += '<figure class="flip-card">\
-      <figure class="flip-card-inner">\
-        <figure class="flip-card-front">\
+      cardsHTML += '<div class="flip-card">\
+      <div class="flip-card-inner">\
+        <div class="flip-card-front">\
           <img data-testid="img" width="100%;" height="100%" ></img>\
-        </figure>\
-        <figure class="flip-card-back">\
+        </div>\
+        <div class="flip-card-back">\
           <ul>\
             <li data-testid="type">Type: </li>\
             <li data-testid="short-name">Short name: </li>\
@@ -151,9 +151,9 @@ function filtrar() {
             <li data-testid="meaning-rev">Meaning rev: </li>\
             <li data-testid="description"></li>\
           </ul>\
-        </figure>\
-      </figure>\
-    </figure>\
+        </div>\
+      </div>\
+    </div>\
     <br>\
     '
     })
