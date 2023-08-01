@@ -18,10 +18,15 @@ data.cards.map(() => {
     <div class="flip-card-back">\
       <ul>\
         <li data-testid="type">Type: </li>\
+        <br>\
         <li data-testid="short-name">Short name: </li>\
+        <br>\
         <li data-testid="name">Name: </li>\
+        <br>\
         <li data-testid="value">Value: </li>\
+        <br>\
         <li data-testid="meaning-up">Meaning up: </li>\
+        <br>\
         <li data-testid="meaning-rev">Meaning rev: </li>\
         <li data-testid="description"></li>\
       </ul>\
