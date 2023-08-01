@@ -278,7 +278,7 @@ article {
 }
 
 #birthday {
-  width: 45vw;
+  width: 20vw;
   height: 6vw;
   display: flex;
   flex-wrap: nowrap;
@@ -323,8 +323,8 @@ article {
 /*Flip cards*/
 .flip-card {
   background-color: transparent;
-  width: 30vw;
-  height: 30vh;
+  width: 20vw;
+  height: 60vh;
   perspective: 1000px;
   font-size: 0.7em;
 }
@@ -365,6 +365,13 @@ article {
   padding-right: 0; /*ayudaba a centra el texto de atrás pero ensancha la card*/
   transform: rotateY(180deg);
 }
+
+.flip-card-back  li{
+ font-size: 1.8em;
+ letter-spacing:1px;
+
+}
+
 
   .switch input {
     opacity: 0;
