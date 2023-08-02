@@ -237,22 +237,3 @@ sortName.onchange = function () {
     } 
   }
 }
-
-//future
-
-/*import future from './data.js';
-const userName = future.getMyLuck()
-document.querySelector('#my-luck').textContent = 'Here is your luck' + userName*/
-
-const luckButton = document.getElementById('btn4');
-console.log(luckButton)
-console.log('hola')
-
-luckButton.addEventListener('click',() => {
-  const userName = document.getElementById('user-name').value;
-  console.log(userName);
-  console.log('Hola');
-  
-  const userBirthday = document.getElementById('birthday').value;
-  console.log(userBirthday)
-}) 
