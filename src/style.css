@@ -326,12 +326,19 @@ article {
 }
 
 /*Flip cards*/
+ul {
+  margin-top: 2vw;
+  padding: 0 0;
+
+}
 .flip-card {
   background-color: transparent;
   width: 30vw;
   height: 45vw;
   perspective: 1000px;
-  font-size: 0.5em;
+  font-size: calc(0.1em + 0.5vw);
+  margin: 0 0;
+  padding: 0 0;
 }
 
 .flip-card-inner {
@@ -343,6 +350,7 @@ article {
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 0 0;
+  margin: 0 0;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -375,6 +383,8 @@ article {
 .flip-card-back  li{
  font-size: 1.8em;
  letter-spacing:1px;
+ margin: 0 0;
+ padding: 0 0;
 
 }
 
