@@ -1,4 +1,5 @@
 //import { example } from './data.js';
+import { sortCards } from './data.js';
 import data from './data/tarot/tarot.js';
 
 //Método para navegar entre archivos HTML con JS.
@@ -179,17 +180,13 @@ function filtrar() {
 
 
 //Sort
-/*
-const $input = document.querySelector("#sort-cards");
-$input.addEventListener("change", ordenar);
 
-function ordenar(){
-
-}
-*/
 
 const sortName = document.getElementById("sort-cards");
-sortName.onchange = function () {
+
+sortName.onchange = function(){sortCards(data, sortName.checked)};
+
+/*sortName.onchange = function () {
   //console.log(data.cards)
   if(sortName.checked){
     const sorted = data.cards.sort(function (a, b) {
@@ -236,4 +233,18 @@ sortName.onchange = function () {
       document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + reversed[i].meaning_rev
     } 
   }
+}*/
+
+
+/*
+Comentario para el futuro cercano 
+Randomizar un arreglo usando el algoritmo aleatorio de Durstenfeld
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
 }
+*/
