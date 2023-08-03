@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="baraja">
+    <main>
+        <div id="deck-header">
+            <header>
+                <h1>Deck</h1>
+            </header>
+        </div>
+      <nav class="nav">
+        <div class="toggle-container">
+          <p>Z A 🡳</p>
+          <label class="switch">
+            <input type="checkbox" id="sort-cards">
+            <span class="slider round"></span>
+          </label>
+          <p>🡱 A Z</p>
+        </div>
+        <select id = "arcans-filter" >
+          <option value = "none-none">None</option>
+          <option value = "minor-arcans">Minor arcans</option>
+          <option value = "major-arcans">Major arcans</option>
+        </select>
+      </nav>
+
+
+
+        <section data-testid="cards-container" class="cards-container">
+        </section>
+        <br>
+        <section>
+            <form action="index.html">
+            <button id="btn2">Home</button>
+            </form>
+        </section>    
+        <br>
+    </main>    
+    <script src="main.js" type="module"></script>
+    <footer> Powered by &hearts;<br>Grecia Fragoso & Marianne Teixido, Laboratoria &copy;
+    </footer>
+  </body>
+</html>
