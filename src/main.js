@@ -111,9 +111,7 @@ function filtrar() {
 //Sort
 
 const sortName = document.getElementById("sort-cards");
-
 sortName.onchange = function(){sortCards(data, sortName.checked)};
-//sortName.onchange = sortCards(data, sortName.checked);
 
 /*
 Comentario para el futuro cercano 
@@ -127,3 +125,5 @@ function shuffleArray(array) {
   }
 }
 */
+
+
