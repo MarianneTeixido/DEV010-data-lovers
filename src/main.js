@@ -127,9 +127,19 @@ function shuffleArray(array) {
 
 //luck
 
-/*const userName = document.getElementById('user-name').value;
-const luckButton = document.getElementsByClassName('read-luck')[0];
+/*const userInput = document.querySelector('input[id="textname"]').value;
+const luckButton = document.querySelector('input[id="btn5"]');
+
 
 luckButton.addEventListener('click', function letUserInf() {
-  console.log(userName);
+  const userName = userInput.value;
+  alert(userName);
 })*/
+
+
+// function nombreUsuario(){
+//   const aparecerNom = document.querySelector('input[name="nombre"]').value;
+//   alert(aparecerNom);
+// }
+
+// nombreUsuario();

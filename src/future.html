@@ -59,7 +59,7 @@
           <section id ="user-name" class="center">
             <input
               type="text"
-              id="textRead"
+              id="textname"
               name="nombre"
               placeholder="Your name"
               />
@@ -251,7 +251,13 @@
         <section>
           <section>
             <!-- <form action = "luck.html"> -->
-              <button id="btn4" class = "read-luck">Read my luck</button>
+              <input id="btn5" class = "read-luck" type="submit" value = "Read My Luck" onclick="nombreUsuario()">
+              <script>
+              function nombreUsuario(){
+                const aparecerNom = document.querySelector('input[name="nombre"]').value;
+                alert(aparecerNom);
+              }
+            </script>
             <!-- </form> -->
           </section>
           <section>
