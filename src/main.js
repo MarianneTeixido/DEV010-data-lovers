@@ -1,5 +1,6 @@
 //import { example } from './data.js';
 import { sortCards } from './data.js';
+import { filterCards } from './data.js';
 import data from './data/tarot/tarot.js';
 
 //Método para navegar entre archivos HTML con JS.
@@ -56,10 +57,24 @@ const $select = document.querySelector("#arcans-filter") //querySelector para el
 
 $select.addEventListener("change", filtrar) //Event listener para ejecutar el filtro cuando se cambia la opción del select
 
+
 function filtrar() {
   //bucles para filtrar
   const selectedOption = $select.selectedIndex;
-  if (selectedOption === 0){ //bucle para la opción none, genera todas las cards
+  if (selectedOption === 0) {
+    const cardsHTML = filterCards.allArcans(data, selectedOption);
+    document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
+    for (let i=0; i < data.cards.length; i++) {
+      document.querySelectorAll('[data-testid = "img"]')[i].src = data.cards[i].img
+      document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + data.cards[i].type
+      document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + data.cards[i].name_short
+      document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + data.cards[i].name
+      document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + data.cards[i].value
+      document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + data.cards[i].meaning_up
+      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
+    }
+  }
+  /*if (selectedOption === 0){ //bucle para la opción none, genera todas las cards
     let cardsHTML = '';
     data.cards.map(() => {
       cardsHTML += '<div class="flip-card">\
@@ -95,9 +110,23 @@ function filtrar() {
       document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
       //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + data.cards[i].desc
     }
-  }
+  }*/
   if (selectedOption === 1) {
-    const minorArcans = data.cards.filter(obj => obj.type === "minor"); //bucle para opción 1, genera sólo las cards de arcanos menores
+    const minorArcans = filterCards.minors(data,selectedOption)[0]
+    const total = minorArcans.length
+    const cardsHTML = filterCards.minors(data, selectedOption)[1];
+    document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
+    for (let i=0; i < total; i++) {
+      document.querySelectorAll('[data-testid = "img"]')[i].src = minorArcans[i].img
+      document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + minorArcans[i].type
+      document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + minorArcans[i].name_short
+      document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + minorArcans[i].name
+      document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + minorArcans[i].value
+      document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + minorArcans[i].meaning_up
+      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + minorArcans[i].meaning_rev
+      //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + minorArcans[i].desc
+    }
+    /*const minorArcans = data.cards.filter(obj => obj.type === "minor"); //bucle para opción 1, genera sólo las cards de arcanos menores
     const total = minorArcans.length
     let cardsHTML = '';
     minorArcans.map(() => {
@@ -133,12 +162,26 @@ function filtrar() {
       document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + minorArcans[i].meaning_up
       document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + minorArcans[i].meaning_rev
       //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + minorArcans[i].desc
-    }
+    }*/
     
   } 
 
   if (selectedOption === 2 ) {
-    const majorArcans = data.cards.filter(obj => obj.type === "major"); //bucle para opción 2, genera cards sólo de arcanos mayores
+    const majorArcans = filterCards.majors(data,selectedOption)[0]
+    const total = majorArcans.length
+    const cardsHTML = filterCards.majors(data, selectedOption)[1];
+    document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
+    for (let i=0; i < total; i++) {
+      document.querySelectorAll('[data-testid = "img"]')[i].src = majorArcans[i].img
+      document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + majorArcans[i].type
+      document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + majorArcans[i].name_short
+      document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + majorArcans[i].name
+      document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + majorArcans[i].value
+      document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + majorArcans[i].meaning_up
+      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + majorArcans[i].meaning_rev
+      //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + minorArcans[i].desc
+    }
+    /*const majorArcans = data.cards.filter(obj => obj.type === "major"); //bucle para opción 2, genera cards sólo de arcanos mayores
     const total = majorArcans.length
     let cardsHTML = '';
     majorArcans.map(() => {
@@ -172,9 +215,9 @@ function filtrar() {
       document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + majorArcans[i].name
       document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + majorArcans[i].value
       document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + majorArcans[i].meaning_up
-      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + majorArcans[i].meaning_rev
-      //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + majorArcans[i].desc
-    }
+      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + majorArcans[i].meaning_rev*/
+    //document.querySelectorAll('[data-testid = "description"]')[i].textContent = "Description: " + majorArcans[i].desc
+    
   }
 } 
 

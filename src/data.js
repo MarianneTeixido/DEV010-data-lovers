@@ -1,16 +1,92 @@
 // estas funciones son de ejemplo
 
-/*export const future = {
-  
-  getMyLuck: () => {
-    const userName = document.getElementById('user-name');
-    console.log(userName)
-    const userBirthday = document.getElementById('birthday');
-    console.log(userBirthday);
+export const filterCards = {
+
+  allArcans: (data) => {
+    let cardsHTML = '';
+    data.cards.map(() => {
+      cardsHTML += '<div class="flip-card">\
+      <div class="flip-card-inner">\
+        <div class="flip-card-front">\
+          <img data-testid="img" width="100%;" height="100%" ></img>\
+        </div>\
+        <div class="flip-card-back">\
+          <ul>\
+            <li data-testid="type">Type: </li>\
+            <li data-testid="short-name">Short name: </li>\
+            <li data-testid="name">Name: </li>\
+            <li data-testid="value">Value: </li>\
+            <li data-testid="meaning-up">Meaning up: </li>\
+            <li data-testid="meaning-rev">Meaning rev: </li>\
+            <li data-testid="description"></li>\
+          </ul>\
+        </div>\
+      </div>\
+    </div>\
+    <br>\
+    '
+    })
+    return cardsHTML;
+  },
+
+  minors: (data) => {
+    const minorArcans = data.cards.filter(obj => obj.type === "minor"); //bucle para opción 1, genera sólo las cards de arcanos menores
+    let cardsHTML = '';
+    minorArcans.map(() => {
+      cardsHTML += '<div class="flip-card">\
+      <div class="flip-card-inner">\
+        <div class="flip-card-front">\
+          <img data-testid="img" width="100%;" height="100%" ></img>\
+        </div>\
+        <div class="flip-card-back">\
+          <ul>\
+            <li data-testid="type">Type: </li>\
+            <li data-testid="short-name">Short name: </li>\
+            <li data-testid="name">Name: </li>\
+            <li data-testid="value">Value: </li>\
+            <li data-testid="meaning-up">Meaning up: </li>\
+            <li data-testid="meaning-rev">Meaning rev: </li>\
+            <li data-testid="description"></li>\
+          </ul>\
+        </div>\
+      </div>\
+    </div>\
+    <br>\
+    '
+    })
+    const arrayMinors = [minorArcans,cardsHTML]
+    return arrayMinors;
+  },
+
+  majors: (data) => {
+    const majorArcans = data.cards.filter(obj => obj.type === "major"); //bucle para opción 1, genera sólo las cards de arcanos menores
+    let cardsHTML = '';
+    majorArcans.map(() => {
+      cardsHTML += '<div class="flip-card">\
+      <div class="flip-card-inner">\
+        <div class="flip-card-front">\
+          <img data-testid="img" width="100%;" height="100%" ></img>\
+        </div>\
+        <div class="flip-card-back">\
+          <ul>\
+            <li data-testid="type">Type: </li>\
+            <li data-testid="short-name">Short name: </li>\
+            <li data-testid="name">Name: </li>\
+            <li data-testid="value">Value: </li>\
+            <li data-testid="meaning-up">Meaning up: </li>\
+            <li data-testid="meaning-rev">Meaning rev: </li>\
+            <li data-testid="description"></li>\
+          </ul>\
+        </div>\
+      </div>\
+    </div>\
+    <br>\
+    '
+    })
+    const arrayMajors = [majorArcans,cardsHTML]
+    return arrayMajors;
   }
-
-};*/
-
+}
 export const sortCards = (data, sortOrder) => {
 //data = data.cards; //Obj
 //sortOrder = sortName.checked; //Boolean
