@@ -1,6 +1,5 @@
 //import { example } from './data.js';
-import { sortCards } from './data.js';
-import { filterCards } from './data.js';
+import { sortCards , filterCards } from './data.js';
 import data from './data/tarot/tarot.js';
 
 //Método para navegar entre archivos HTML con JS.
@@ -127,3 +126,12 @@ function shuffleArray(array) {
   }
 }
 */
+
+//luck
+
+/*const userName = document.getElementById('user-name').value;
+const luckButton = document.getElementsByClassName('read-luck')[0];
+
+luckButton.addEventListener('click', function letUserInf() {
+  console.log(userName);
+})*/

@@ -87,6 +87,7 @@ export const filterCards = {
     return arrayMajors;
   }
 }
+
 export const sortCards = (data, sortOrder) => {
 //data = data.cards; //Obj
 //sortOrder = sortName.checked; //Boolean
@@ -136,3 +137,7 @@ export const sortCards = (data, sortOrder) => {
   }
 }
 
+export const luck = {
+  
+
+}
