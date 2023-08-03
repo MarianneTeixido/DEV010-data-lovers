@@ -228,8 +228,10 @@ function filtrar() {
 const sortName = document.getElementById("sort-cards");
 
 sortName.onchange = function(){sortCards(data, sortName.checked)};
+//sortName.onchange = sortCards(data, sortName.checked);
 
-/*sortName.onchange = function () {
+/*
+sortName.onchange = function () {
   //console.log(data.cards)
   if(sortName.checked){
     const sorted = data.cards.sort(function (a, b) {
