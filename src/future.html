@@ -253,6 +253,45 @@
             <!-- <form action = "luck.html"> -->
               <button id="btn5" class="read-luck">Read my luck</button>
             <!-- </form>  -->
+              <input id="btn5" class = "read-luck" type="submit" value = "Read My Luck" onclick="nombreUsuario()">
+              <script>
+              function nombreUsuario(){
+                let userName = document.querySelector('input[name="nombre"]').value;
+                const userDay = document.querySelector('select[name="day"]').selectedIndex;
+                const userMonth = document.querySelector('select[name="month"]').selectedIndex;
+                const userYear = document.querySelector('select[name="year"]').selectedIndex;
+                console.log(userName, userDay, userMonth, userYear);
+
+                let asciiName = 0;
+                userName = userName.split('');
+                console.log(userName)
+                for (let i = 0 ; i < userName.length ; i++) {
+                  userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
+                  asciiName += parseInt(userName[i]);
+                }
+                console.log(asciiName);
+
+                let luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
+                console.log('luckyNumber')
+                console.log(luckyNumber)
+                let strLuckyNumber = luckyNumber.toString();
+                console.log('strLuckyNumber')
+                console.log(strLuckyNumber)
+                let arrLuckyNumber = strLuckyNumber.split('');
+                console.log('arrLuckyNumber')
+                console.log(arrLuckyNumber)
+                let shortLuckyNumber = 79;
+                while (shortLuckyNumber > 78) {
+                  shortLuckyNumber += arrLuckyNumber.reduce((acc, num) => acc + num, 0)
+                  console.log(shortLuckyNumber)
+                  arrLuckyNumber = shortLuckyNumber.split('');
+                  console.log(shortLuckyNumber);
+                  console.log(arrLuckyNumber);
+                }
+                console.log(shortLuckyNumber)
+              }
+            </script>
+            <!-- </form> -->
           </section>
           <section>
             <br>
