@@ -270,10 +270,23 @@
                 console.log(asciiName);
 
                 let luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
+                console.log('luckyNumber')
                 console.log(luckyNumber)
-                //if (luckyNumber.toString().length > 2) {
-
-                //}
+                let strLuckyNumber = luckyNumber.toString();
+                console.log('strLuckyNumber')
+                console.log(strLuckyNumber)
+                let arrLuckyNumber = strLuckyNumber.split('');
+                console.log('arrLuckyNumber')
+                console.log(arrLuckyNumber)
+                let shortLuckyNumber = 79;
+                while (shortLuckyNumber > 78) {
+                  shortLuckyNumber += arrLuckyNumber.reduce((acc, num) => acc + num, 0)
+                  console.log(shortLuckyNumber)
+                  arrLuckyNumber = shortLuckyNumber.split('');
+                  console.log(shortLuckyNumber);
+                  console.log(arrLuckyNumber);
+                }
+                console.log(shortLuckyNumber)
               }
             </script>
             <!-- </form> -->
