@@ -95,9 +95,7 @@ export const filterCards = {
 }
 
 export const sortCards = (data, sortOrder) => {
-//data = data.cards; //Obj
-//sortOrder = sortName.checked; //Boolean
-//console.log(sortOrder);
+
   if(sortOrder){
     const sorted = data.cards.sort(function (a, b) {
       if (a.name > b.name) {
@@ -143,7 +141,18 @@ export const sortCards = (data, sortOrder) => {
   }
 }
 
-export const luck = {
+/*
+export const luck = (userName) => {
   
+  let asciiName = 0;
+  userName = userName.split('');
+  console.log(userName);
+  for (let i = 0 ; i < userName.length ; i++) {
+    userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
+    asciiName += parseInt(userName[i]);
+  }
+ // return asciiName;
+  console.log(asciiName);
 
 }
+*/

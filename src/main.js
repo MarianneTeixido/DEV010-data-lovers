@@ -1,5 +1,5 @@
 //import { example } from './data.js';
-import { sortCards , filterCards } from './data.js';
+import { sortCards , filterCards, luck } from './data.js';
 import data from './data/tarot/tarot.js';
 
 //Método para navegar entre archivos HTML con JS.
@@ -8,7 +8,49 @@ document.getElementById("btn2").addEventListener("click", function(nav){
   window.location.href='/baraja.html?reading';
 });
 
-//generación de cards sin filtro 
+
+
+/*--------------Calculo--------------------------- */
+
+/*
+const luckBtn = document.getElementById("btn5")
+let userName = document.querySelector('input[name="nombre"]').value;
+const userDay = document.querySelector('select[name="day"]').selectedIndex;
+const userMonth = document.querySelector('select[name="month"]').selectedIndex;
+const userYear = document.querySelector('select[name="year"]').selectedIndex;
+console.log(userName);
+
+btn5.onclick = function(){luck(userName)};
+*/
+
+const luckBtn = document.getElementById("btn5")
+luckBtn.onclick =function nombreUsuario(){
+  let userName = document.querySelector('input[name="nombre"]').value;
+  const userDay = document.querySelector('select[name="day"]').selectedIndex;
+  const userMonth = document.querySelector('select[name="month"]').selectedIndex;
+  const userYear = document.querySelector('select[name="year"]').selectedIndex;
+//  console.log(userName, userDay, userMonth, userYear);
+
+  let asciiName = 0;
+  userName = userName.split('');
+  console.log(userName)
+  for (let i = 0 ; i < userName.length ; i++) {
+    userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
+    asciiName += parseInt(userName[i]);
+  }
+
+  console.log(asciiName);
+
+  let luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
+  console.log(luckyNumber)
+   //if (luckyNumber.toString().length > 2) {
+   //}
+
+}
+
+
+/*------------Generación de cards sin filtro -------- */
+
 let cardsHTML = '';
 data.cards.map(() => {
   cardsHTML += '<div class="flip-card">\
@@ -50,11 +92,11 @@ for (let i=0; i < data.cards.length; i++) {
 }
 
 
-//Filtro
+/*--------------Filtro--------------------------- */
+
 const $select = document.querySelector("#arcans-filter") //querySelector para el <select> (lista desplegable)
 
 $select.addEventListener("change", filtrar) //Event listener para ejecutar el filtro cuando se cambia la opción del select
-
 
 function filtrar() {
   //bucles para filtrar
@@ -107,13 +149,15 @@ function filtrar() {
 } 
 
 
-//Sort
+/*--------------Ordenar--------------------------- */
 
 const sortName = document.getElementById("sort-cards");
 sortName.onchange = function(){sortCards(data, sortName.checked)};
 
+
+
+/*--------------Comentarios--------------------------- */
 /*
-Comentario para el futuro cercano 
 Randomizar un arreglo usando el algoritmo aleatorio de Durstenfeld
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
@@ -125,21 +169,3 @@ function shuffleArray(array) {
 }
 */
 
-//luck
-
-/*const userInput = document.querySelector('input[id="textname"]').value;
-const luckButton = document.querySelector('input[id="btn5"]');
-
-
-luckButton.addEventListener('click', function letUserInf() {
-  const userName = userInput.value;
-  alert(userName);
-})*/
-
-
-// function nombreUsuario(){
-//   const aparecerNom = document.querySelector('input[name="nombre"]').value;
-//   alert(aparecerNom);
-// }
-
-// nombreUsuario();
