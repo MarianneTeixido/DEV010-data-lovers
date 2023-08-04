@@ -59,7 +59,7 @@
           <section id ="user-name" class="center">
             <input
               type="text"
-              id="textname"
+              id="textName"
               name="nombre"
               placeholder="Your name"
               />
@@ -251,32 +251,8 @@
         <section>
           <section>
             <!-- <form action = "luck.html"> -->
-              <input id="btn5" class = "read-luck" type="submit" value = "Read My Luck" onclick="nombreUsuario()">
-              <script>
-              function nombreUsuario(){
-                let userName = document.querySelector('input[name="nombre"]').value;
-                const userDay = document.querySelector('select[name="day"]').selectedIndex;
-                const userMonth = document.querySelector('select[name="month"]').selectedIndex;
-                const userYear = document.querySelector('select[name="year"]').selectedIndex;
-                console.log(userName, userDay, userMonth, userYear);
-
-                let asciiName = 0;
-                userName = userName.split('');
-                console.log(userName)
-                for (let i = 0 ; i < userName.length ; i++) {
-                  userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
-                  asciiName += parseInt(userName[i]);
-                }
-                console.log(asciiName);
-
-                let luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
-                console.log(luckyNumber)
-                //if (luckyNumber.toString().length > 2) {
-
-                //}
-              }
-            </script>
-            <!-- </form> -->
+              <button id="btn5" class="read-luck">Read my luck</button>
+            <!-- </form>  -->
           </section>
           <section>
             <br>
