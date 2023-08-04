@@ -1,5 +1,5 @@
 //import { example } from './data.js';
-import { sortCards , filterCards } from './data.js';
+import { sortCards , filterCards, luck } from './data.js';
 import data from './data/tarot/tarot.js';
 
 //Método para navegar entre archivos HTML con JS.
@@ -11,17 +11,20 @@ document.getElementById("btn2").addEventListener("click", function(nav){
 
 
 /*--------------Calculo--------------------------- */
+
 /*
 const luckBtn = document.getElementById("btn5")
-  let userName = document.querySelector('input[name="nombre"]').value;
+let userName = document.querySelector('input[name="nombre"]').value;
 const userDay = document.querySelector('select[name="day"]').selectedIndex;
 const userMonth = document.querySelector('select[name="month"]').selectedIndex;
 const userYear = document.querySelector('select[name="year"]').selectedIndex;
+console.log(userName);
 
-luckBtn.onclick = function(){luck(userName)};
+btn5.onclick = function(){luck(userName)};
 */
 
-btn5.onclick =function nombreUsuario(){
+const luckBtn = document.getElementById("btn5")
+luckBtn.onclick =function nombreUsuario(){
   let userName = document.querySelector('input[name="nombre"]').value;
   const userDay = document.querySelector('select[name="day"]').selectedIndex;
   const userMonth = document.querySelector('select[name="month"]').selectedIndex;
