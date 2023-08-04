@@ -1,7 +1,9 @@
 //import { example } from './data.js';
-import { sortCards , filterCards, luck } from './data.js';
+import { sortCards , filterCards, /*luck*/ } from './data.js';
 import data from './data/tarot/tarot.js';
 
+//document.addEventListener("DOMContentLoaded",function(event){
+//console.log('DOM listo')
 //Método para navegar entre archivos HTML con JS.
 document.getElementById("btn2").addEventListener("click", function(nav){
   nav.preventDefault;
@@ -23,13 +25,13 @@ console.log(userName);
 btn5.onclick = function(){luck(userName)};
 */
 
-const luckBtn = document.getElementById("btn5")
+/*const luckBtn = document.getElementById("btn5")
 luckBtn.onclick =function nombreUsuario(){
   let userName = document.querySelector('input[name="nombre"]').value;
   const userDay = document.querySelector('select[name="day"]').selectedIndex;
   const userMonth = document.querySelector('select[name="month"]').selectedIndex;
   const userYear = document.querySelector('select[name="year"]').selectedIndex;
-//  console.log(userName, userDay, userMonth, userYear);
+  //  console.log(userName, userDay, userMonth, userYear);
 
   let asciiName = 0;
   userName = userName.split('');
@@ -41,12 +43,12 @@ luckBtn.onclick =function nombreUsuario(){
 
   console.log(asciiName);
 
-  let luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
+  const luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
   console.log(luckyNumber)
-   //if (luckyNumber.toString().length > 2) {
-   //}
+  //if (luckyNumber.toString().length > 2) {
+  //}
 
-}
+}*/
 
 
 /*------------Generación de cards sin filtro -------- */
@@ -168,4 +170,4 @@ function shuffleArray(array) {
   }
 }
 */
-
+//})
