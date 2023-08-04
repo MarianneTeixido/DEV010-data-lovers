@@ -10,11 +10,15 @@ Parrafo del tarot
 La página web permite a los usuarios visualizar las 78 cartas del Tarot, filtrar su visualización deacuerdo por tipo de Arcano; Arcanos Mayores y Arcanos Menores. De la misma forma, el esta web permite ordenar las visualización por orden alfabético ascendente y descendente. 
 Adicionalmente esta web permite al usuario acceder a una lectura abierta del tarot en donde a partir del cálculo numérico del largo del nombre, fecha de nacimiento y un algoritmo místico de randomización, devuelve al usuario una de las cartas del tarot 
 
+#### Prototipo de alta fidelidad 
+
+#### Diseño final 
+
 ### Estado del proyecto
 ### Demostración de funciones y aplicaciones
-### Acceso al Proyecto
+### Acceso al proyecto
 ### Tecnologías utilizadas
-### Desarrolladoras del Proyecto
+### Desarrolladoras del proyecto
 
 - [Grecia Fragoso](https://github.com/GreciaFragoso)
 - [Marianne Teixidó](https://marianneteixido.github.io/)

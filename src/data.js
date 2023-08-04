@@ -143,14 +143,16 @@ export const sortCards = (data, sortOrder) => {
 
 /*
 export const luck = (userName) => {
+  
   let asciiName = 0;
   userName = userName.split('');
+  console.log(userName);
   for (let i = 0 ; i < userName.length ; i++) {
     userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
     asciiName += parseInt(userName[i]);
   }
-  return asciiName;
-  //console.log(asciiName);
+ // return asciiName;
+  console.log(asciiName);
 
 }
 */
