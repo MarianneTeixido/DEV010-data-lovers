@@ -257,36 +257,46 @@
               <script>
                 const luckBtn = document.getElementById("btn5")
                 luckBtn.onclick = function nombreUsuario(){
-              //function nombreUsuario(){
-                let userName = document.querySelector('input[name="nombre"]').value;
-                const userDay = document.querySelector('select[name="day"]').selectedIndex;
-                const userMonth = document.querySelector('select[name="month"]').selectedIndex;
-                const userYear = document.querySelector('select[name="year"]').selectedIndex;
-                console.log(userName, userDay, userMonth, userYear);
+                //function nombreUsuario(){
+                  let userName = document.querySelector('input[name="nombre"]').value;
+                  const userDay = document.querySelector('select[name="day"]').selectedIndex;
+                  const userMonth = document.querySelector('select[name="month"]').selectedIndex;
+                  const userYear = document.querySelector('select[name="year"]').selectedIndex;
+                  console.log(userName, userDay, userMonth, userYear);
 
-                let asciiName = 0;
-                userName = userName.split('');
-                console.log(userName)
-                for (let i = 0 ; i < userName.length ; i++) {
-                  userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
-                  asciiName += parseInt(userName[i]);
-                }
-                console.log(asciiName);
-
-                let luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
-                let strLuckyNumber = luckyNumber.toString();
-                let arrLuckyNumber = strLuckyNumber.split('');
-                let shortLuckyNumber = 79; //la inicializo en 79 para que el bucle inicie
-                while (shortLuckyNumber > 78) {
-                  for (let i = 0; i < arrLuckyNumber.length; i++) {
-                    shortLuckyNumber = 0; //se inicializa en 0 con el bucle ya iniciado
-                    arrLuckyNumber[i] = parseInt(arrLuckyNumber[i])
+                  let asciiName = 0;
+                  userName = userName.split('');
+                  console.log(userName)
+                  for (let i = 0 ; i < userName.length ; i++) {
+                    userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
+                    asciiName += parseInt(userName[i]);
                   }
+                  console.log(asciiName);
+
+                  let luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
+                  let strLuckyNumber = luckyNumber.toString();
+                  let arrLuckyNumber = strLuckyNumber.split('');
+                  let shortLuckyNumber = 79; //la inicializo en 79 para que el bucle inicie
+                  while (shortLuckyNumber > 78) {
+                    for (let i = 0; i < arrLuckyNumber.length; i++) {
+                      shortLuckyNumber = 0; //se inicializa en 0 con el bucle ya iniciado
+                      arrLuckyNumber[i] = parseInt(arrLuckyNumber[i])
+                    }
                   shortLuckyNumber += arrLuckyNumber.reduce((acc, num) => acc + num, 0)
                   arrLuckyNumber = shortLuckyNumber.toString().split('');
+                  }
+                  console.log(shortLuckyNumber)
+
+                  if (shortLuckyNumber < 20) {
+                    console.log('Hola')
+                    shortLuckyNumber += parseInt(Math.random() * 58);
+                    console.log(shortLuckyNumber)
+                  }
                 }
-                console.log(shortLuckyNumber)
-              }
+                document.getElementById("btn5").addEventListener("click", function(nav){
+                  nav.preventDefault;
+                  window.location.href='/luck.html?shortLuckyNumber';
+                });
             </script>
             <!-- </form> -->
           </section>
