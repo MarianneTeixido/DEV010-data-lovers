@@ -48,23 +48,50 @@ El usuario da click en un botón _Read my luck_ que activa la función de calcul
 
 ## Diseño de interfaz de usuario 
 
-El diseño fue realizado en Figma. 
-
-![index]()
-![about]()
-![baraja]()
-![future]()
-![luck]()
+El diseño fue realizado en Figma. Contemplamos una paleta de colores con mucho morado y negro para darle una sensación mística y mágica al usuario. Optamos por letras sans serif en el contenido y algo más elaborado para el título. 
 
 ### Prototipo de alta fidelidad 
+Historia inicial `index.html`
+
+![index](src/img/index.png "Esto es una prueba")
+
+Desplegable dentro de `index.html` con información sobre el tarot.  
+
+![about](src/img/about.png)
+
+Visualización de las cartas con la función de filtrar y ordenar. 
+
+![baraja](src/img/baraja.png)
+
+Lectura abierta con un formulario para capturar la información del usuario. 
+
+![future](src/img/future.png)
+
+Resultado del cálculo que devuelve una carta al usuario. 
+
+![luck](src/img/luck.png)
 
 ## Estado del proyecto
+
 ## Demostración de funciones y aplicaciones
+
 ## Acceso al proyecto
+
+Este proyecto tiene un deploy en el siguiente link.
+
+
 ## Tecnologías utilizadas
+
+- HTML
+- Vanilla JavaScript
+- CSS (_Cascading Style Sheets_)
+- Git y Github
+- Figma
+
 ## Desarrolladoras del proyecto
 
 - [Grecia Fragoso](https://github.com/GreciaFragoso)
 - [Marianne Teixidó](https://marianneteixido.github.io/)
-### Licencia
+
+## Licencia
 Este proyecto está licenciado con CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
