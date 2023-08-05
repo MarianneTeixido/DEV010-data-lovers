@@ -10,8 +10,6 @@ document.getElementById("btn2").addEventListener("click", function(nav){
   window.location.href='/baraja.html?reading';
 });
 
-
-
 /*--------------Calculo--------------------------- */
 
 /*
@@ -156,7 +154,15 @@ function filtrar() {
 const sortName = document.getElementById("sort-cards");
 sortName.onchange = function(){sortCards(data, sortName.checked)};
 
+/*----------navegación luck.html - luck.html-----------*/
 
+/*document.getElementById("btn5").addEventListener("click", function(nav){
+  window.location.href='/luck.html?shortLuckyNumber';
+});*/
+
+/*------------flip card luck.html------------------*/
+
+//document.querySelector('[data-testid = "img-back"]').src = data.cards[shortLuckyNumber].img
 
 /*--------------Comentarios--------------------------- */
 /*
