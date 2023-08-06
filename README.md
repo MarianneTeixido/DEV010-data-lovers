@@ -1,6 +1,5 @@
 # Data lovers | Tarot
 
-Índice (pendiente)
 
 ## Descripción del proyecto
 
@@ -50,7 +49,7 @@ El usuario da click en un botón _Read my luck_ que activa la función de calcul
 
 El diseño fue realizado en Figma. Contemplamos una paleta de colores con mucho morado y negro para darle una sensación mística y mágica al usuario. Optamos por letras sans serif en el contenido y algo más elaborado para el título. 
 
-### Prototipo de alta fidelidad 
+## Prototipo de alta fidelidad 
 Historia inicial `index.html`
 
 ![index](src/img/index.png "Esto es una prueba")
@@ -73,12 +72,31 @@ Resultado del cálculo que devuelve una carta al usuario.
 
 ## Estado del proyecto
 
+El proyecto actualmente cuenta con todas las historias de usuario corriendo menos la referente al cálculo. Las funciones de filtrar y ordenar están en `data.js` pero ambas contienen errores. Sort no interactúa con filter y filter arroja un error. 
+Quedan pendiente escribir los test, solucionar los errores, implementar la seleción de las cartas para mostrar en la historia almacenada en `luck.html` y hacer deploy. 
+
 ## Demostración de funciones y aplicaciones
+
+Instrucciones para ejecutar el proyecto.
+
+Clonar el repositorio
+```
+git clone git@github.com:MarianneTeixido/DEV010-data-lovers.git
+```
+Desplazarse dentro del proyecto e instalar las librerías con node.
+
+```
+cd DEV010-data-lovers
+npm install
+```
+Montar un servidor local para ejecutar la página en una red local. 
+```
+npm start
+```
 
 ## Acceso al proyecto
 
-Este proyecto tiene un deploy en el siguiente link.
-
+Pendiente deploy
 
 ## Tecnologías utilizadas
 
