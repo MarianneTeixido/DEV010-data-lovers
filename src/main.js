@@ -80,22 +80,23 @@ data.cards.map(() => {
 '
 })
 
-document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
-for (let i=0; i < data.cards.length; i++) {
-  document.querySelectorAll('[data-testid = "img"]')[i].src = data.cards[i].img
-  document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + data.cards[i].type
-  document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + data.cards[i].name_short
-  document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + data.cards[i].name
-  document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + data.cards[i].value
-  document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + data.cards[i].meaning_up
-  document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
+if(document.querySelector('.cards-container')){
+  document.querySelector('.cards-container').innerHTML = cardsHTML;
+  for (let i=0; i < data.cards.length; i++) {
+    document.querySelectorAll('[data-testid = "img"]')[i].src = data.cards[i].img
+    document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + data.cards[i].type
+    document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + data.cards[i].name_short
+    document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + data.cards[i].name
+    document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + data.cards[i].value
+    document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + data.cards[i].meaning_up
+    document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
+  }
 }
-
 
 /*--------------Filtro--------------------------- */
 
 const $select = document.querySelector("#arcans-filter") //querySelector para el <select> (lista desplegable)
-
+if($select){
 $select.addEventListener("change", filtrar) //Event listener para ejecutar el filtro cuando se cambia la opción del select
 
 function filtrar() {
@@ -146,13 +147,26 @@ function filtrar() {
       document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + majorArcans[i].meaning_rev
     }
   }
-} 
+} }
 
 
 /*--------------Ordenar--------------------------- */
-
 const sortName = document.getElementById("sort-cards");
-sortName.onchange = function(){sortCards(data, sortName.checked)};
+if(sortName){
+  sortName.onchange = function(){
+    const sorted=sortCards(data, sortName.checked)
+    
+    for (let i=0; i < sorted.length; i++) {
+      document.querySelectorAll('[data-testid = "img"]')[i].src = sorted[i].img;
+      document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + sorted[i].type
+      document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + sorted[i].name_short
+      document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + sorted[i].name
+      document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + sorted[i].value
+      document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + sorted[i].meaning_up
+      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + sorted[i].meaning_rev
+    } 
+  };
+}
 
 /*----------navegación luck.html - luck.html-----------*/
 
