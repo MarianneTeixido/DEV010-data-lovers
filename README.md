@@ -1,115 +1,116 @@
 # Data lovers | Tarot
 
 
-## Descripción del proyecto
+## Project Description
 
-Este proyecto consiste en una página web que permite visualizar un dataset con información del Tarot. 
-Parrafo del tarot 
-La página web permite a los usuarios visualizar las 78 cartas del Tarot, filtrar su visualización deacuerdo por tipo de Arcano; Arcanos Mayores y Arcanos Menores. De la misma forma, el esta web permite ordenar las visualización por orden alfabético ascendente y descendente. 
-Adicionalmente esta web permite al usuario acceder a una lectura abierta del tarot en donde a partir del cálculo numérico del largo del nombre, fecha de nacimiento y un algoritmo místico de randomización, devuelve al usuario una de las cartas del tarot para su  interpretación. 
+This project consists of a web page that allows users to visualize a dataset with Tarot information.
+The web page enables users to view the 78 Tarot cards, filter their visualization by Arcana type: Major Arcana and Minor Arcana. Likewise, this web page allows sorting the visualization in ascending and descending alphabetical order.
+Additionally, this web page allows users to access an open Tarot reading, where based on the numerical calculation of the name's length, date of birth, and a mystical randomization algorithm, it returns one of the Tarot cards for interpretation.
 
-## Acerca de Tarot
+## About Tarot
 
-El tarot es una baraja de naipes a menudo utilizada como medio de consulta e interpretación de hechos (presentes, pasados o futuros), sueños, percepciones o estados emocionales que constituye, además, un tipo de cartomancia.
+Tarot is a deck of cards often used as a means of consultation and interpretation of events (present, past, or future), dreams, perceptions, or emotional states, constituting a type of cartomancy.
 
-Sus orígenes datan al menos del siglo XIV. La técnica se basa en la selección de cartas de una baraja especial, que luego son interpretadas por una lectora, según el orden o disposición en que han sido seleccionadas o repartidas. La baraja de tarot está compuesta por 78 cartas divididas en arcanos mayores, los cuales son 22; y menores, que son 56. La palabra arcano proviene del latín arcanum, que significa 'misterio' o 'secreto'.
+Its origins date back to at least the 14th century. The technique is based on the selection of cards from a special deck, which are then interpreted by a reader, according to the order or arrangement in which they have been selected or dealt. The Tarot deck consists of 78 cards divided into Major Arcana, which are 22, and Minor Arcana, which are 56. The word "Arcana" comes from the Latin "arcanum," which means 'mystery' or 'secret.'
 
-## Detalles de la base de datos
+## Database details
 
-El dataset con el que trabajamos contiene la siguiente información. 
+The dataset we are working with contains the following information:
 
-  - Tipo: Si es arcano mayor o menor.
-  - Nombre: El nombre de cada una.
-  - Nombre corto: Un código identificador de cada una.
-  - Valor: Su valor numérico asociado.
-  - Significado hacia arriba: El significado asociado a la carta volteada hacia arriba.
-  - Significado al reverso: El significado asociado a la carta volteada al reverso.
-  - Descripción de la carta: La descripción del escenario asociado a la carta.
-  - Imagen: Una representación visual de la descripción de la carta.
+- Type: Whether it is a Major or Minor Arcana.
+- Name: The name of each card.
+- Short name: An identifying code for each card.
+- Value: Its associated numerical value.
+- Upright meaning: The meaning associated with the card in an upright position.
+- Reversed meaning: The meaning associated with the card in a reversed position.
+- Card description: The description of the scenario associated with the card.
+- Image: A visual representation of the card's description.
 
-## Historias de usuario 
+## User stories 
 
-El diseño de este proyecto considera proporciona a la persona usuaria cuatro posibilidades para interactuar con la información. Estas son visualizar, filtrar, ordenar y calcular. Todas ellas estan diseñadas para ser responsivas. 
+The design of this project provides four possibilities for interacting with the information. These are to view, filter, sort, and calculate. All of them are designed to be responsive.
 
-Para ello primero se contemplaron 4 historias de usuario. Cada una de las cuales están almacenadas en un archivo html: 
-- `index.html` Funge como "home". Tiene 3 botones. _Learn about_ que despliega más información. _Deck_ Direcciona a `baraja.html` y _Open Reading_ que direcciona a `future.html`.  
+For this, four user stories were considered, each of which is stored in an HTML file:
 
-- `baraja.html` Despliega la visualización de las cartas con el contenido respectivo para cada una. Esta historia permite ordenar la información por orden alfabético y filtrarla por tipo de arcano. La función de ordenar se activa con un _toggle button_ y filtrar por _select_. Al final de la página el usuario puede presionar un botón para volver a `index.html`
+- `index.html` cts as the "home" page. It has three buttons. _Learn about_ displays more information. _Deck_  directs to `baraja.html` and _Open Reading_ directs to `future.html`.  
 
-- `future.html` Breve lectura de cartas abierta para el usuario.
-La interacción con el usuario implica:
-El usuario escribe su nombre en un recuadro de texto.
-El usuario selecciona su fecha de nacimiento de lista desplegable.
-El usuario da click en un botón _Read my luck_ que activa la función de calcular. La cual suma el valor númerico en ASCII del nombre, el valor la fecha y le suma un algoritmo de randomización el cual arroja un valor entre 1 y 78 (por el número de cartas). Este valor lo manda por a `luck.html`.
+- `baraja.html`  Displays the visualization of the cards with the respective content for each one. This story allows sorting the information in alphabetical order and filtering it by Arcana type.  The sorting function is activated with a toggle button, and filtering is done using a select element. At the end of the page, the user can press a button to return to `index.html`
 
-- `luck.html` Toma el valor númerico enviado por `future.html` que asigna al índice de alguna de las cartas y la imprime en el DOM. Contiene un botón para regresar al `index.html` y otro más para volver a probar suerte. 
+- `future.html` Brief open card reading for the user. The interaction with the user involves:
+The user enters their name in a text box.
+The user selects their date of birth from a drop-down list.
+The user clicks a button _Read my luck_, which activates the calculation function. It sums the ASCII numerical value of the name, the date value, and adds a randomization algorithm that generates a value between 1 and 78 (the number of cards). This value is sent to `luck.html`.
+
+- `luck.html` Receives the numerical value sent by `future.html` which corresponds to the index of one of the cards, and displays it in the DOM. It contains a button to return to `index.html` and another one to try their luck again. 
 
 
-## Diseño de interfaz de usuario 
+## User interface design 
 
-El diseño fue realizado en Figma. Contemplamos una paleta de colores con mucho morado y negro para darle una sensación mística y mágica al usuario. Optamos por letras sans serif en el contenido y algo más elaborado para el título. 
+The design was created using Figma. We opted for a color palette with lots of purple and black to give the user a mystical and magical feeling. We used sans-serif fonts for the content and a more elaborate font for the title. 
 
-## Prototipo de alta fidelidad 
-Historia inicial `index.html`
+## High-Fidelity prototype
 
-![index](src/img/index.png "Esto es una prueba")
+Initial story `index.html`
 
-Desplegable dentro de `index.html` con información sobre el tarot.  
+![index](src/img/index.png)
+
+Dropdown within `index.html` with information about Tarot.  
 
 ![about](src/img/about.png)
 
-Visualización de las cartas con la función de filtrar y ordenar. 
+Visualization of the cards with filtering and sorting functionalities. 
 
 ![baraja](src/img/baraja.png)
 
-Lectura abierta con un formulario para capturar la información del usuario. 
+Open reading with a form to capture user information.
 
 ![future](src/img/future.png)
 
-Resultado del cálculo que devuelve una carta al usuario. 
+Result of the calculation that returns a card to the user.
 
 ![luck](src/img/luck.png)
 
-## Estado del proyecto
+## Project Status
 
-El proyecto actualmente cuenta con todas las historias de usuario corriendo menos la referente al cálculo. Las funciones de filtrar y ordenar están en `data.js` pero ambas contienen errores. Sort no interactúa con filter y filter arroja un error. 
-Quedan pendiente escribir los test, solucionar los errores, implementar la seleción de las cartas para mostrar en la historia almacenada en `luck.html` y hacer deploy. 
+The project currently has all user stories running, except for the one related to the calculation. The filter and sort functions are implemented in `data.js` but both contain errors. Sort does not interact with filter, and filter throws an error. There are pending tasks to write tests, fix the errors, implement the selection of cards to display in the story stored in `luck.html` and deploy the project. 
 
-## Demostración de funciones y aplicaciones
+## Functions and applications demonstration
 
-Instrucciones para ejecutar el proyecto.
+Instructions to run the project.
 
-Clonar el repositorio
+Clone the repository
 ```
 git clone git@github.com:MarianneTeixido/DEV010-data-lovers.git
 ```
-Desplazarse dentro del proyecto e instalar las librerías con node.
+Navigate inside the project and install the required libraries using node.
+You must have Node.js installed.
 
 ```
 cd DEV010-data-lovers
 npm install
 ```
-Montar un servidor local para ejecutar la página en una red local. 
+Run a local server to execute the page on a local network.
 ```
 npm start
 ```
 
-## Acceso al proyecto
+## Project access
 
-Pendiente deploy
+Pending deployment
 
-## Tecnologías utilizadas
+## Technologies used
 
 - HTML
 - Vanilla JavaScript
 - CSS (_Cascading Style Sheets_)
 - Git y Github
+- Node 
 - Figma
 
-## Desarrolladoras del proyecto
+## Project developers
 
 - [Grecia Fragoso](https://github.com/GreciaFragoso)
 - [Marianne Teixidó](https://marianneteixido.github.io/)
 
-## Licencia
-Este proyecto está licenciado con CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+## License
+This project is licensed under CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
