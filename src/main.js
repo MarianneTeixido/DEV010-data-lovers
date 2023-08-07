@@ -150,8 +150,9 @@ const luckBtn = document.getElementById("btn5")
 let shortLuckyNumber = 0;
 if(luckBtn) {
   //let shortLuckyNumber = 0;
-  luckBtn.onclick = function nombreUsuario(){
-  //function nombreUsuario(){
+  luckBtn.onclick = function nombreUsuario(event){
+    event.preventDefault();
+    //function nombreUsuario(){
     let userName = document.querySelector('input[name="nombre"]').value;
     const userDay = document.querySelector('select[name="day"]').selectedIndex;
     const userMonth = document.querySelector('select[name="month"]').selectedIndex;
@@ -179,15 +180,16 @@ if(luckBtn) {
     if (shortLuckyNumber < 20) {
       shortLuckyNumber += parseInt(Math.random() * 58);
     }
-    console.log(shortLuckyNumber)
-    window.location.href='/luck.html?shortLuckyNumber'+ shortLuckyNumber;
-    console.log(shortLuckyNumber)  
+    window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
   }
 } // cierra if (luckButton)
 
 const luckData = document.getElementById('luck-data')
 if (luckData) {
-  console.log("hola" + shortLuckyNumber)
+  const valores = window.location.search;
+  const urlParams = new URLSearchParams(valores)
+  const shortLuckyNumber = urlParams.get('shortLuckyNumber')
+  console.log(shortLuckyNumber)
   document.getElementById("img-back").src = data.cards[shortLuckyNumber].img
   document.querySelector('[id = "type"]').textContent = "Type: " + data.cards[shortLuckyNumber].type
   document.querySelector('[id = "short-name"]').textContent = "Short name: " + data.cards[shortLuckyNumber].name_short
@@ -198,6 +200,7 @@ if (luckData) {
   console.log(data.cards[shortLuckyNumber])
   alert("hola")
 }
+
 
 //document.getElementById("btn5").addEventListener("click", function(nav){
 //nav.preventDefault;
