@@ -510,4 +510,7 @@ ul {
   align-items: center;
 }
 
-
+#luck-data {
+  color: white;
+  font-size: 10px;
+}
