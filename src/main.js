@@ -105,8 +105,8 @@ if(document.querySelector('.cards-container')){
 
 const $select = document.querySelector("#arcans-filter") //querySelector para el <select> (lista desplegable)
 if($select){
-$select.addEventListener("change", filtrar) //Event listener para ejecutar el filtro cuando se cambia la opción del select
-
+  $select.addEventListener("change", filtrar) //Event listener para ejecutar el filtro cuando se cambia la opción del select
+}
 function filtrar() {
   //bucles para filtrar
   const selectedOption = $select.selectedIndex;
@@ -115,7 +115,7 @@ function filtrar() {
     document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
   dataIter(data.cards)
   }
-  
+    
   if (selectedOption === 1) {
     const minorArcans = filterCards.minors(data,selectedOption)[0]
     const total = minorArcans.length
@@ -131,7 +131,7 @@ function filtrar() {
     document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
   dataIter(majorArcans);
   }
-} }
+} 
 
 
 /*--------------Ordenar--------------------------- */
@@ -144,6 +144,68 @@ if(sortName){
 }
 
 /*----------navegación luck.html - luck.html-----------*/
+
+const luckBtn = document.getElementById("btn5")
+
+//let shortLuckyNumber = 0;
+if(luckBtn) {
+  let shortLuckyNumber = 0;
+  luckBtn.onclick = function nombreUsuario(){
+    //function nombreUsuario(){
+    let userName = document.querySelector('input[name="nombre"]').value;
+    const userDay = document.querySelector('select[name="day"]').selectedIndex;
+    const userMonth = document.querySelector('select[name="month"]').selectedIndex;
+    const userYear = document.querySelector('select[name="year"]').selectedIndex;
+  
+    let asciiName = 0;
+    userName = userName.split('');
+    for (let i = 0 ; i < userName.length ; i++) {
+      userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
+      asciiName += parseInt(userName[i]);
+    }
+
+    const luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
+    const strLuckyNumber = luckyNumber.toString();
+    let arrLuckyNumber = strLuckyNumber.split('');
+    shortLuckyNumber = 79; //la inicializo en 79 para que el bucle inicie
+    while (shortLuckyNumber > 78) {
+      for (let i = 0; i < arrLuckyNumber.length; i++) {
+        shortLuckyNumber = 0; //se inicializa en 0 con el bucle ya iniciado
+        arrLuckyNumber[i] = parseInt(arrLuckyNumber[i])
+      }
+      shortLuckyNumber += arrLuckyNumber.reduce((acc, num) => acc + num, 0)
+      arrLuckyNumber = shortLuckyNumber.toString().split('');
+    }
+
+    if (shortLuckyNumber < 20) {
+      shortLuckyNumber += parseInt(Math.random() * 58);
+    }
+
+    window.location.href='/luck.html?shortLuckyNumber'+ shortLuckyNumber;  
+  }
+
+  const luckData = document.getElementById('luck-data')
+  if (luckData) {
+    alert("hola" + shortLuckyNumber)
+    document.getElementById("img-back").src = data.cards[shortLuckyNumber].img
+    document.querySelector('[id = "type"]').textContent = "Type: " + data.cards[shortLuckyNumber].type
+    document.querySelector('[id = "short-name"]').textContent = "Short name: " + data.cards[shortLuckyNumber].name_short
+    document.querySelector('[id = "name"]').textContent = "Name: " + data.cards[shortLuckyNumber].name;        
+    document.querySelector('[id = "value"]').textContent = "Value: " + data.cards[shortLuckyNumber].value
+    document.querySelector('[id = "meaning-up"]').textContent = "Meaning up: " + data.cards[shortLuckyNumber].meaning_up
+    document.querySelector('[id = "meaning-rev"]').textContent = "Meaning rev: " + data.cards[shortLuckyNumber].meaning_rev
+    console.log(data.cards[shortLuckyNumber])
+    alert("hola")
+  }
+  //document.getElementById("btn5").addEventListener("click", function(nav){
+  //nav.preventDefault;
+  /*window.location.href='/luck.html?shortLuckyNumber'+shortLuckyNumber;
+    console.log(shortLuckyNumber);
+    console.log(data.cards[shortLuckyNumber])
+    document.querySelector('[data-testid = "img-back"]').src = data.cards[shortLuckyNumber].img*/
+  //});
+}
+
 
 /*document.getElementById("btn5").addEventListener("click", function(nav){
   window.location.href='/luck.html?shortLuckyNumber';
