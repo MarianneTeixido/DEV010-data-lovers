@@ -256,6 +256,7 @@
               <!-- <input id="btn5" class = "read-luck" type="submit" value = "Read My Luck" onclick="nombreUsuario()">-->
               <script>
                 const luckBtn = document.getElementById("btn5")
+                let shortLuckyNumber = 0;
                 luckBtn.onclick = function nombreUsuario(){
                 //function nombreUsuario(){
                   let userName = document.querySelector('input[name="nombre"]').value;
@@ -276,7 +277,7 @@
                   let luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
                   let strLuckyNumber = luckyNumber.toString();
                   let arrLuckyNumber = strLuckyNumber.split('');
-                  let shortLuckyNumber = 79; //la inicializo en 79 para que el bucle inicie
+                  shortLuckyNumber = 79; //la inicializo en 79 para que el bucle inicie
                   while (shortLuckyNumber > 78) {
                     for (let i = 0; i < arrLuckyNumber.length; i++) {
                       shortLuckyNumber = 0; //se inicializa en 0 con el bucle ya iniciado
@@ -295,7 +296,10 @@
                 }
                 document.getElementById("btn5").addEventListener("click", function(nav){
                   nav.preventDefault;
-                  window.location.href='/luck.html?shortLuckyNumber';
+                 shortLuckyNumber;
+                  alert(finalNumber);
+                  window.location.href='/luck.html?shortLuckyNumber'+shortLuckyNumber;
+                //  document.querySelector('[data-testid = "img-back"]').src = data.cards[finalNumber].img
                 });
             </script>
             <!-- </form> -->
