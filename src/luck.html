@@ -16,13 +16,30 @@
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img data-testid="img-front" width="100%;" height="100%" ></img>
+              <img id="img-front" width="100%;" height="100%" ></img>
             </div>
             <div class="flip-card-back">
-              <img data-testid="img-back" width="100%;" height="100%" ></img>
+              <img id="img-back" width="100%;" height="100%" ></img>
             </div>
           </div>
         </div>
+      </section>
+      <section id="luck-data">
+        <ul>
+          <li id="type">Type: </li>
+          <br>
+          <li id="short-name">Short name: </li>
+          <br>
+          <li id="name">Name: </li>
+          <br>
+          <li id="value">Value: </li>
+          <br>
+          <li id="meaning-up">Meaning up: </li>
+          <br>
+          <li id="meaning-rev">Meaning rev: </li>
+          <br>
+          <li id="description"></li>
+        </ul>
       </section>
         <section>
             <form action="index.html">
@@ -31,9 +48,6 @@
         </section>
         <footer id="index-footer">Powered by &hearts;<br>Grecia Fragoso & Marianne Teixido, Laboratoria &copy;</footer>
         <script src="main.js" type="module"></script>
-        <script>
-          document.querySelector('[data-testid = "img-back"]').src = data.cards[finalNumber].img
-        </script> 
     </main>
 </body>
 </html>
