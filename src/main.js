@@ -10,6 +10,22 @@ document.getElementById("btn2").addEventListener("click", function(nav){
   window.location.href='/baraja.html?reading';
 });
 
+/*--------------Iteración Cartas--------------------------- */
+
+
+function dataIter(iter){
+  for (let i=0; i < iter.length; i++) {
+    document.querySelectorAll('[data-testid = "img"]')[i].src = iter[i].img;
+    document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + iter[i].type
+    document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + iter[i].name_short
+    document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + iter[i].name
+    document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + iter[i].value
+    document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + iter[i].meaning_up
+    document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + iter[i].meaning_rev
+  } 
+  return iter;
+}
+
 /*--------------Calculo--------------------------- */
 
 /*
@@ -82,15 +98,7 @@ data.cards.map(() => {
 
 if(document.querySelector('.cards-container')){
   document.querySelector('.cards-container').innerHTML = cardsHTML;
-  for (let i=0; i < data.cards.length; i++) {
-    document.querySelectorAll('[data-testid = "img"]')[i].src = data.cards[i].img
-    document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + data.cards[i].type
-    document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + data.cards[i].name_short
-    document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + data.cards[i].name
-    document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + data.cards[i].value
-    document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + data.cards[i].meaning_up
-    document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
-  }
+  dataIter(data.cards);
 }
 
 /*--------------Filtro--------------------------- */
@@ -105,15 +113,7 @@ function filtrar() {
   if (selectedOption === 0) {
     const cardsHTML = filterCards.allArcans(data, selectedOption);
     document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
-    for (let i=0; i < data.cards.length; i++) {
-      document.querySelectorAll('[data-testid = "img"]')[i].src = data.cards[i].img
-      document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + data.cards[i].type
-      document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + data.cards[i].name_short
-      document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + data.cards[i].name
-      document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + data.cards[i].value
-      document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + data.cards[i].meaning_up
-      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + data.cards[i].meaning_rev
-    }
+  dataIter(data.cards)
   }
   
   if (selectedOption === 1) {
@@ -121,15 +121,7 @@ function filtrar() {
     const total = minorArcans.length
     const cardsHTML = filterCards.minors(data, selectedOption)[1];
     document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
-    for (let i=0; i < total; i++) {
-      document.querySelectorAll('[data-testid = "img"]')[i].src = minorArcans[i].img
-      document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + minorArcans[i].type
-      document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + minorArcans[i].name_short
-      document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + minorArcans[i].name
-      document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + minorArcans[i].value
-      document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + minorArcans[i].meaning_up
-      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + minorArcans[i].meaning_rev
-    }
+    dataIter(minorArcans);
   } 
 
   if (selectedOption === 2 ) {
@@ -137,15 +129,7 @@ function filtrar() {
     const total = majorArcans.length
     const cardsHTML = filterCards.majors(data, selectedOption)[1];
     document.querySelector('[data-testid="cards-container"]').innerHTML = cardsHTML;
-    for (let i=0; i < total; i++) {
-      document.querySelectorAll('[data-testid = "img"]')[i].src = majorArcans[i].img
-      document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + majorArcans[i].type
-      document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + majorArcans[i].name_short
-      document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + majorArcans[i].name
-      document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + majorArcans[i].value
-      document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + majorArcans[i].meaning_up
-      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + majorArcans[i].meaning_rev
-    }
+  dataIter(majorArcans);
   }
 } }
 
@@ -155,16 +139,7 @@ const sortName = document.getElementById("sort-cards");
 if(sortName){
   sortName.onchange = function(){
     const sorted=sortCards(data, sortName.checked)
-    
-    for (let i=0; i < sorted.length; i++) {
-      document.querySelectorAll('[data-testid = "img"]')[i].src = sorted[i].img;
-      document.querySelectorAll('[data-testid = "type"]')[i].textContent = "Type: " + sorted[i].type
-      document.querySelectorAll('[data-testid = "short-name"]')[i].textContent = "Short name: " + sorted[i].name_short
-      document.querySelectorAll('[data-testid = "name"]')[i].textContent = "Name: " + sorted[i].name
-      document.querySelectorAll('[data-testid = "value"]')[i].textContent = "Value: " + sorted[i].value
-      document.querySelectorAll('[data-testid = "meaning-up"]')[i].textContent = "Meaning up: " + sorted[i].meaning_up
-      document.querySelectorAll('[data-testid = "meaning-rev"]')[i].textContent = "Meaning rev: " + sorted[i].meaning_rev
-    } 
+    dataIter(sorted);
   };
 }
 
