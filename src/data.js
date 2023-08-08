@@ -161,7 +161,6 @@ export const luck = (data,userName,userDay,userMonth,userYear) => {
     if (shortLuckyNumber < 20) {
       shortLuckyNumber += parseInt(Math.random() * 58);
     }
-    //return shortLuckyNumber;
-    window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
+    return shortLuckyNumber;
   }
 
