@@ -134,34 +134,35 @@ export const sortCards = (data, sortOrder) => {
 
 
 
-export const luck = (data,userName,userDay,userMonth,userYear) => {
+export const luck = (data, userName,userDay,userMonth,userYear) => {
 
 
-    let shortLuckyNumber = 0;
-    let asciiName = 0;
-    userName = userName.split('');
-    for (let i = 0 ; i < userName.length ; i++) {
-      userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
-      asciiName += parseInt(userName[i]);
-    }  
+  let shortLuckyNumber = 0;
+  let asciiName = 0;
+  userName = userName.split('');
+  for (let i = 0 ; i < userName.length ; i++) {
+    userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
+    asciiName += parseInt(userName[i]);
+  }  
 
-    const luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
-    const strLuckyNumber = luckyNumber.toString();
-    let arrLuckyNumber = strLuckyNumber.split('');
-    shortLuckyNumber = 79; //la inicializo en 79 para que el bucle inicie
-    while (shortLuckyNumber > 78) {
-      for (let i = 0; i < arrLuckyNumber.length; i++) {
-        shortLuckyNumber = 0; //se inicializa en 0 con el bucle ya iniciado
-        arrLuckyNumber[i] = parseInt(arrLuckyNumber[i])
-      }
-      shortLuckyNumber += arrLuckyNumber.reduce((acc, num) => acc + num, 0)
-      arrLuckyNumber = shortLuckyNumber.toString().split('');
+  const luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
+  const strLuckyNumber = luckyNumber.toString();
+  let arrLuckyNumber = strLuckyNumber.split('');
+  shortLuckyNumber = 79; //la inicializo en 79 para que el bucle inicie
+  while (shortLuckyNumber > 78) {
+    for (let i = 0; i < arrLuckyNumber.length; i++) {
+      shortLuckyNumber = 0; //se inicializa en 0 con el bucle ya iniciado
+      arrLuckyNumber[i] = parseInt(arrLuckyNumber[i])
     }
-
-    if (shortLuckyNumber < 20) {
-      shortLuckyNumber += parseInt(Math.random() * 58);
-    }
-    //return shortLuckyNumber;
-    window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
+    shortLuckyNumber += arrLuckyNumber.reduce((acc, num) => acc + num, 0)
+    arrLuckyNumber = shortLuckyNumber.toString().split('');
   }
+
+  if (shortLuckyNumber < 20) {
+    shortLuckyNumber += parseInt(Math.random() * 58);
+  }
+  
+  return shortLuckyNumber;
+  //window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
+}
 

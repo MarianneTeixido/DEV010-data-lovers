@@ -107,16 +107,15 @@ if(sortName){
 const luckBtn = document.getElementById("btn5")
 
 if(luckBtn){
-luckBtn.onclick = function(event){
-  event.preventDefault();
-  let userName = document.querySelector('input[name="nombre"]').value;
-  const userDay = document.querySelector('select[name="day"]').selectedIndex;
-  const userMonth = document.querySelector('select[name="month"]').selectedIndex;
-  const userYear = document.querySelector('select[name="year"]').selectedIndex;
-  luck(data,userName,userDay,userMonth,userYear); 
-  //window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
-
-}
+  luckBtn.onclick = function(event){
+    event.preventDefault();
+    const userName = document.querySelector('input[name="nombre"]').value;
+    const userDay = document.querySelector('select[name="day"]').selectedIndex;
+    const userMonth = document.querySelector('select[name="month"]').selectedIndex;
+    const userYear = document.querySelector('select[name="year"]').selectedIndex;
+    const shortLuckyNumber = luck(data,userName,userDay,userMonth,userYear); 
+    window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
+  }
 }
 
 const luckData = document.getElementById('luck-data')
@@ -127,7 +126,7 @@ if (luckData) {
   const shortLuckyNumber = urlParams.get('shortLuckyNumber')
   document.getElementById("img-back").src = data.cards[shortLuckyNumber].img
   document.querySelector('[id = "type"]').textContent = "Type: " + data.cards[shortLuckyNumber].type
- // document.querySelector('[id = "short-name"]').textContent = "Short name: " + data.cards[shortLuckyNumber].name_short
+  // document.querySelector('[id = "short-name"]').textContent = "Short name: " + data.cards[shortLuckyNumber].name_short
   document.querySelector('[id = "name"]').textContent = "Name: " + data.cards[shortLuckyNumber].name;        
   document.querySelector('[id = "value"]').textContent = "Value: " + data.cards[shortLuckyNumber].value
   document.querySelector('[id = "meaning-up"]').textContent = "Meaning up: " + data.cards[shortLuckyNumber].meaning_up
