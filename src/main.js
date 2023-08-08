@@ -148,9 +148,9 @@ if(sortName){
 const luckBtn = document.getElementById("btn5")
 
 let shortLuckyNumber = 0;
-//let shortLuckyNumber = 0;
 if(luckBtn) {
-  luckBtn.onclick = function nombreUsuario(){
+  luckBtn.onclick = function nombreUsuario(nav){
+    nav.preventDefault()
     //function nombreUsuario(){
     let userName = document.querySelector('input[name="nombre"]').value;
     const userDay = document.querySelector('select[name="day"]').selectedIndex;
@@ -176,27 +176,15 @@ if(luckBtn) {
       shortLuckyNumber += arrLuckyNumber.reduce((acc, num) => acc + num, 0)
       arrLuckyNumber = shortLuckyNumber.toString().split('');
     }
-/*
+
     if (shortLuckyNumber < 20) {
       shortLuckyNumber += parseInt(Math.random() * 58);
     }
-    */
+    
    console.log(shortLuckyNumber)
     alert(shortLuckyNumber);
     window.location.href='/luck.html?shortLuckyNumber='+shortLuckyNumber;  
   }
-/*
-let params = new URLSearchParams(document.location.search);
-let name = params.get("miVariable"); // este es el string "Marianne"
-alert("Hola "+ name);
- */
-  //document.getElementById("btn5").addEventListener("click", function(nav){
-  //nav.preventDefault;
-  /*window.location.href='/luck.html?shortLuckyNumber'+shortLuckyNumber;
-    console.log(shortLuckyNumber);
-    console.log(data.cards[shortLuckyNumber])
-    document.querySelector('[data-testid = "img-back"]').src = data.cards[shortLuckyNumber].img*/
-  //});
 }
 
 const luckData = document.getElementById('luck-data')
@@ -204,8 +192,7 @@ if (luckData) {
   luckData.onclick = function carta(){
   let finalNum = new URLSearchParams(document.location.search);
   let finalCard = finalNum.get("shortLuckyNumber");
-  alert("hola " + parseInt(finalCard))
-  console.log(finalCard)
+  alert("hola " + finalCard)
   document.getElementById("img-back").src = data.cards[shortLuckyNumber].img
   document.querySelector('[id = "type"]').textContent = "Type: " + data.cards[shortLuckyNumber].type
   document.querySelector('[id = "short-name"]').textContent = "Short name: " + data.cards[shortLuckyNumber].name_short
