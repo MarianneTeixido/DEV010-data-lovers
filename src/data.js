@@ -14,8 +14,6 @@ export const filterCards = {
           <ul>\
             <li data-testid="type">Type: </li>\
             <br>\
-            <li data-testid="short-name">Short name: </li>\
-            <br>\
             <li data-testid="name">Name: </li>\
             <br>\
             <li data-testid="value">Value: </li>\
@@ -47,11 +45,15 @@ export const filterCards = {
         <div class="flip-card-back">\
           <ul>\
             <li data-testid="type">Type: </li>\
-            <li data-testid="short-name">Short name: </li>\
+            <br>\
             <li data-testid="name">Name: </li>\
+            <br>\
             <li data-testid="value">Value: </li>\
+            <br>\
             <li data-testid="meaning-up">Meaning up: </li>\
+            <br>\
             <li data-testid="meaning-rev">Meaning rev: </li>\
+            <br>\
             <li data-testid="description"></li>\
           </ul>\
         </div>\
@@ -76,11 +78,15 @@ export const filterCards = {
         <div class="flip-card-back">\
           <ul>\
             <li data-testid="type">Type: </li>\
-            <li data-testid="short-name">Short name: </li>\
+            <br>\
             <li data-testid="name">Name: </li>\
+            <br>\
             <li data-testid="value">Value: </li>\
+            <br>\
             <li data-testid="meaning-up">Meaning up: </li>\
+            <br>\
             <li data-testid="meaning-rev">Meaning rev: </li>\
+            <br>\
             <li data-testid="description"></li>\
           </ul>\
         </div>\
@@ -125,18 +131,38 @@ export const sortCards = (data, sortOrder) => {
   }
 }
 
-/*
-export const luck = (userName) => {
-  
+
+
+
+export const luck = (data, userName,userDay,userMonth,userYear) => {
+
+
+  let shortLuckyNumber = 0;
   let asciiName = 0;
   userName = userName.split('');
-  console.log(userName);
   for (let i = 0 ; i < userName.length ; i++) {
     userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
     asciiName += parseInt(userName[i]);
-  }
- // return asciiName;
-  console.log(asciiName);
+  }  
 
+  const luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
+  const strLuckyNumber = luckyNumber.toString();
+  let arrLuckyNumber = strLuckyNumber.split('');
+  shortLuckyNumber = 79; //la inicializo en 79 para que el bucle inicie
+  while (shortLuckyNumber > 78) {
+    for (let i = 0; i < arrLuckyNumber.length; i++) {
+      shortLuckyNumber = 0; //se inicializa en 0 con el bucle ya iniciado
+      arrLuckyNumber[i] = parseInt(arrLuckyNumber[i])
+    }
+    shortLuckyNumber += arrLuckyNumber.reduce((acc, num) => acc + num, 0)
+    arrLuckyNumber = shortLuckyNumber.toString().split('');
+  }
+
+  if (shortLuckyNumber < 20) {
+    shortLuckyNumber += parseInt(Math.random() * 58);
+  }
+  
+  return shortLuckyNumber;
+  //window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
 }
-*/
+
