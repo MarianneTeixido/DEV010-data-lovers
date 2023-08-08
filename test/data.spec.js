@@ -1,10 +1,17 @@
-import { data, filterCards, sortCards} from '../src/data.js';
+import { filterCards, sortCards, luck} from '../src/data.js';
 
 const user_name_1 = 'Ignacio Allende'
 const day_user_1 = 23
 const month_user_1 = 4
 const year_user_1 = 1994
-
+const user_name_2 = 'José María Morelos y Pavón'
+const day_user_2 = 2
+const month_user_2 = 11
+const year_user_2 = 2023
+const user_name_3 = 'J'
+const day_user_3 = 1
+const month_user_3 = 1
+const year_user_3 = 1921
 
 describe('filterCards', () => {
   it('is an object', () => {
@@ -53,6 +60,21 @@ describe('sortCards', () => {
   //   expect(typeof sortCards(!sortOrder)).toBe('array');
   // });
 });
+
+describe('luck', () => {
+  it ("debería retornar un número menor o igual a 78 para " + user_name_1 + ', ' + day_user_1 + '/' + month_user_1 + '/' + year_user_1, () => {
+    expect(luck(user_name_1, day_user_1, month_user_1, year_user_1)).toBeLessThan(78);
+  });
+
+  it ("debería retornar un número menor o igual a 78 para " + user_name_2 + ', ' + day_user_2 + '/' + month_user_2 + '/' + year_user_2, () => {
+    expect(luck(user_name_2, day_user_2, month_user_2, year_user_2)).toBeLessThan(78);
+  });
+
+  it ("debería retornar un número menor o igual a 78 para " + user_name_3 + ', ' + day_user_3 + '/' + month_user_3 + '/' + year_user_3, () => {
+    expect(luck(user_name_3, day_user_3, month_user_3, year_user_3)).toBeLessThan(78);
+  });
+
+})
 
 /*describe('anotherExample', () => {
   it('is a function', () => {

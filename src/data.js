@@ -134,7 +134,7 @@ export const sortCards = (data, sortOrder) => {
 
 
 
-export const luck = ( userName,userDay,userMonth,userYear) => {
+export const luck = (userName,userDay,userMonth,userYear) => {
 
 
   let shortLuckyNumber = 0;
