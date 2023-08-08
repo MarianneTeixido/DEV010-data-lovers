@@ -26,44 +26,6 @@ function dataIter(iter){
   return iter;
 }
 
-/*--------------Calculo--------------------------- */
-
-/*
-const luckBtn = document.getElementById("btn5")
-let userName = document.querySelector('input[name="nombre"]').value;
-const userDay = document.querySelector('select[name="day"]').selectedIndex;
-const userMonth = document.querySelector('select[name="month"]').selectedIndex;
-const userYear = document.querySelector('select[name="year"]').selectedIndex;
-console.log(userName);
-
-btn5.onclick = function(){luck(userName)};
-*/
-
-/*const luckBtn = document.getElementById("btn5")
-luckBtn.onclick =function nombreUsuario(){
-  let userName = document.querySelector('input[name="nombre"]').value;
-  const userDay = document.querySelector('select[name="day"]').selectedIndex;
-  const userMonth = document.querySelector('select[name="month"]').selectedIndex;
-  const userYear = document.querySelector('select[name="year"]').selectedIndex;
-  //  console.log(userName, userDay, userMonth, userYear);
-
-  let asciiName = 0;
-  userName = userName.split('');
-  console.log(userName)
-  for (let i = 0 ; i < userName.length ; i++) {
-    userName[i] = userName[i].charCodeAt() //sustituir cada miembro del array por su propio valor ASCII
-    asciiName += parseInt(userName[i]);
-  }
-
-  console.log(asciiName);
-
-  const luckyNumber = parseInt(userDay) + parseInt(userMonth) + parseInt(userYear) + asciiName;
-  console.log(luckyNumber)
-  //if (luckyNumber.toString().length > 2) {
-  //}
-
-}*/
-
 
 /*------------Generación de cards sin filtro -------- */
 
