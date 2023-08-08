@@ -134,7 +134,7 @@ export const sortCards = (data, sortOrder) => {
 
 
 
-export const luck = (data, userName,userDay,userMonth,userYear) => {
+export const luck = ( userName,userDay,userMonth,userYear) => {
 
 
   let shortLuckyNumber = 0;
@@ -163,6 +163,5 @@ export const luck = (data, userName,userDay,userMonth,userYear) => {
   }
   
   return shortLuckyNumber;
-  //window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
 }
 

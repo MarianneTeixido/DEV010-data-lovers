@@ -113,7 +113,7 @@ if(luckBtn){
     const userDay = document.querySelector('select[name="day"]').selectedIndex;
     const userMonth = document.querySelector('select[name="month"]').selectedIndex;
     const userYear = document.querySelector('select[name="year"]').selectedIndex;
-    const shortLuckyNumber = luck(data,userName,userDay,userMonth,userYear); 
+    const shortLuckyNumber = luck(userName,userDay,userMonth,userYear); 
     window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
   }
 }

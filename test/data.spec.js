@@ -1,4 +1,4 @@
-import { data, filterCards, allArcans, minors, majors, sortCards, cardsHTML, arrayMinors, arrayMajors, sortOrder, sorted, reversed } from '../src/data.js';
+import { data, filterCards, allArcans, minors, majors, sortCards, cardsHTML, arrayMinors, arrayMajors, sortOrder, sorted, reversed, luck } from '../src/data.js';
 
 
 describe(filterCards, () => {
@@ -64,12 +64,12 @@ describe(sortCards, () => {
   });
 });
 
-/*describe('anotherExample', () => {
+describe(luck, () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof luck).toBe('function');
   });
 
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
-});*/
+});
