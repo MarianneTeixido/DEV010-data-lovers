@@ -1,4 +1,4 @@
-import { filterCards, sortCards, luck} from '../src/data.js';
+import { filterCards, sortCards, luck, sortOrder} from '../src/data.js';
 
 const user_name_1 = 'Ignacio Allende'
 const day_user_1 = 23
@@ -12,11 +12,40 @@ const user_name_3 = 'J'
 const day_user_3 = 1
 const month_user_3 = 1
 const year_user_3 = 1921
+const data = {"cards" : [
+  {
+    "type": "major",
+    "name_short": "ar01",
+    "name": "The Magician",
+    "value": 1,
+  },
+  {
+    "type": "major",
+    "name_short": "ar02",
+    "name": "The High Priestess",
+    "value": 2,
+  },
+  {
+    "type": "major",
+    "name_short": "ar03",
+    "name": "The Empress",
+    "value": 3,
+  },
+  {
+    "type": "major",
+    "name_short": "ar04",
+    "name": "The Emperor",
+    "value": 4,
+  }]}
 
 describe('filterCards', () => {
   it('is an object', () => {
     expect(typeof filterCards).toBe('object');
   });
+
+  it('must return a string',() => {
+    expect(typeof filterCards.allArcans(data)).toBe('string')
+  })
 });
 
 
@@ -24,13 +53,16 @@ describe('allArcans', () => {
   it('is a function', () => {
     expect(typeof filterCards.allArcans).toBe('function');
   });
-
 });
 
 describe('minors', () => {
   it('is a function', () => {
     expect(typeof filterCards.minors).toBe('function');
   });
+
+  it('must return an array',() => {
+    expect(typeof filterCards.minors(data)).toBe('object')
+  })
 
   // it('returns `array`', () => {
   //   expect(typeof filterCards.minors(data)).toBe('array');
@@ -42,6 +74,9 @@ describe('majors', () => {
     expect(typeof filterCards.majors).toBe('function');
   });
 
+  it('must return an array',() => {
+    expect(typeof filterCards.majors(data)).toBe('object')
+  })
   // it('returns an array', () => {
   //   expect(typeof filterCards.majors(data)).toBe('array');
   // }); //Cannot set propierties of undefined (cards) => en data.cards.map(...)
@@ -52,6 +87,13 @@ describe('sortCards', () => {
     expect(typeof sortCards).toBe('function');
   });
 
+  it('must return sorted object',() => {
+    expect(typeof sortCards(data,sortOrder)).toBe('object')
+  })
+
+  it('must return reversed object',() => {
+    expect(typeof sortCards(data,!sortOrder)).toBe('object')
+  })
   // it('returns `array`', () => {
   //   expect(typeof sortCards(sortOrder)).toBe('array');
   // }); //Cannot set propierties of undefined (cards) => en data.cards.reverse(...)
