@@ -158,15 +158,8 @@ export const luck = ( userName,userDay,userMonth,userYear) => {
     arrLuckyNumber = shortLuckyNumber.toString().split('');
   }
 
-<<<<<<< HEAD
-    if (shortLuckyNumber < 20) {
-      shortLuckyNumber += parseInt(Math.random() * 58);
-    }
-    return shortLuckyNumber;
-=======
   if (shortLuckyNumber < 20) {
     shortLuckyNumber += parseInt(Math.random() * 58);
->>>>>>> main
   }
   
   return shortLuckyNumber;
