@@ -98,7 +98,7 @@ body {
     justify-content: center;
 }
 
-h1 {
+h1, h3 {
   text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
     0px 0px 20px #b393d3;
   margin: 0; /*Eliminé margen para evitar que quedé muy alejado  de los demás elementos (botón index)*/
@@ -513,11 +513,13 @@ ul {
 
 #luck-data {
   color: white;
-  font-size: 15px;
-  width: 80%;
+  font-size: 30px;
+  width: 100%;
+  height: 100%;
   text-align: center;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .flip-card-front {
@@ -526,7 +528,9 @@ ul {
 }
 
 .luck-text {
-  font-size: 900%;
+  font-family: Helvetica, sans-serif;
+  font-size: 800%;
   font-weight: bold;
   text-align: center;
+  color: black;
 }
