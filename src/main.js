@@ -1,12 +1,12 @@
 import { sortCards , filterCards, luck } from './data.js';
 import data from './data/tarot/tarot.js';
 
-
+/*
 document.getElementById("btn2").addEventListener("click", function(nav){
   nav.preventDefault;
   window.location.href='/baraja.html?reading';
 });
-
+*/
 /*--------------Iteración Cartas--------------------------- */
 
 
