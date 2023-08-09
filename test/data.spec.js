@@ -94,6 +94,7 @@ describe('sortCards', () => {
   it('must return reversed object',() => {
     expect(typeof sortCards(data,!sortOrder)).toBe('object')
   })
+
   // it('returns `array`', () => {
   //   expect(typeof sortCards(sortOrder)).toBe('array');
   // }); //Cannot set propierties of undefined (cards) => en data.cards.reverse(...)

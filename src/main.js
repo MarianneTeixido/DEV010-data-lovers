@@ -1,10 +1,7 @@
-//import { example } from './data.js';
 import { sortCards , filterCards, luck } from './data.js';
 import data from './data/tarot/tarot.js';
 
-//document.addEventListener("DOMContentLoaded",function(event){
-//console.log('DOM listo')
-//Método para navegar entre archivos HTML con JS.
+
 document.getElementById("btn2").addEventListener("click", function(nav){
   nav.preventDefault;
   window.location.href='/baraja.html?reading';
@@ -102,7 +99,7 @@ if(sortName){
   };
 }
 
-/*----------navegación luck.html - luck.html-----------*/
+/*----------Cálculo future.html - Navegación a luck.html-----------*/
 
 const luckBtn = document.getElementById("btn5")
 
@@ -113,7 +110,7 @@ if(luckBtn){
     const userDay = document.querySelector('select[name="day"]').selectedIndex;
     const userMonth = document.querySelector('select[name="month"]').selectedIndex;
     const userYear = document.querySelector('select[name="year"]').selectedIndex;
-    const shortLuckyNumber = luck(data,userName,userDay,userMonth,userYear); 
+    const shortLuckyNumber = luck(userName,userDay,userMonth,userYear); 
     window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
   }
 }
@@ -126,7 +123,6 @@ if (luckData) {
   const shortLuckyNumber = urlParams.get('shortLuckyNumber')
   document.getElementById("img-back").src = data.cards[shortLuckyNumber].img
   document.querySelector('[id = "type"]').textContent = "Type: " + data.cards[shortLuckyNumber].type
-  // document.querySelector('[id = "short-name"]').textContent = "Short name: " + data.cards[shortLuckyNumber].name_short
   document.querySelector('[id = "name"]').textContent = "Name: " + data.cards[shortLuckyNumber].name;        
   document.querySelector('[id = "value"]').textContent = "Value: " + data.cards[shortLuckyNumber].value
   document.querySelector('[id = "meaning-up"]').textContent = "Meaning up: " + data.cards[shortLuckyNumber].meaning_up
