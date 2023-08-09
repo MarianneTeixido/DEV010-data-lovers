@@ -341,7 +341,7 @@ ul {
   font-size: calc(0.1em + 0.5vw);
   margin: 0 0;
   padding: 0 0;
-  
+  border-radius: 15px;
 }
 
 .flip-card-inner {
@@ -354,6 +354,7 @@ ul {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 0 0;
   margin: 0 0;
+  border-radius: 15px;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -366,11 +367,13 @@ ul {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  border-radius: 15px;
 }
 
 .flip-card-front {
   background-color: #bbb;
   color: black;
+  border-radius: 15px;
 }
 
 .flip-card-back {
@@ -379,8 +382,8 @@ ul {
   text-align: center;
   font-family: Helvetica, sans-serif;
   font-size: 0.7em;
-  padding-right: 0; /*ayudaba a centra el texto de atrás pero ensancha la card*/
   transform: rotateY(180deg);
+  border-radius: 15px;
 }
 
 .flip-card-back  li{
@@ -509,12 +512,13 @@ ul {
   gap: 4px;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }
 
 #luck-data {
   color: white;
-  font-size: 30px;
-  width: 50%;
+  font-size: 20px;
+  width: 70%;
   height: 100%;
   text-align: center;
   align-items: center;
@@ -524,9 +528,25 @@ ul {
   margin: auto;
 }
 
+#luck-data ul{
+  background-color: #7A0BC0;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  border-radius: 15px;
+}
+
 .flip-card-front {
   background-image: url(img/card-reverse.jpg);
-  border-radius: 5px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  border-radius: 15px;
 }
 
 .luck-text {
@@ -535,4 +555,7 @@ ul {
   font-weight: bold;
   text-align: center;
   color: black;
+  opacity: 0.7;
+  text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
 }
