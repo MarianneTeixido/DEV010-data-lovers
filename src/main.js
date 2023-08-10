@@ -1,12 +1,12 @@
 import { sortCards , filterCards, luck } from './data.js';
 import data from './data/tarot/tarot.js';
 
-
+/*
 document.getElementById("btn2").addEventListener("click", function(nav){
   nav.preventDefault;
   window.location.href='/baraja.html?reading';
 });
-
+*/
 /*--------------Iteración Cartas--------------------------- */
 
 
@@ -111,7 +111,7 @@ if(luckBtn){
     const userMonth = document.querySelector('select[name="month"]').selectedIndex;
     const userYear = document.querySelector('select[name="year"]').selectedIndex;
     const shortLuckyNumber = luck(userName,userDay,userMonth,userYear); 
-    window.location.assign(`/luck?shortLuckyNumber=${shortLuckyNumber}`)
+    window.location.assign(`/DEV010-data-lovers/src/luck?shortLuckyNumber=${shortLuckyNumber}`)
   }
 }
 
